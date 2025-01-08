@@ -1,37 +1,54 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
 
-def split_data(input_file, train_file, test_file, test_size=0.2, random_state=42):
-    """Split the processed dataset into training and testing sets."""
-    print("Loading processed dataset...")
-    data = pd.read_csv(input_file)
+# Load engineered logs
+file_path = 'data/engineered_logs.csv'  # Replace with your file path
+df = pd.read_csv(file_path)
 
-    print("Separating features and labels...")
-    X = data.drop(columns=['Anomalous'])  # Features
-    y = data['Anomalous']  # Labels
+# Separate features and labels
+X = df.drop(columns=['LogID', 'Timestamp', 'Endpoint', 'IP_Address', 'Anomalous'])
+y = df['Anomalous']
 
-    print("Splitting the dataset into training and testing sets...")
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=test_size, stratify=y, random_state=random_state
-    )
+# Ensure all features are numeric
+numeric_columns = X.select_dtypes(include=['float64', 'int64']).columns.tolist()
+X = X[numeric_columns]
 
-    print("Saving training and testing sets...")
-    train_data = pd.concat([X_train, y_train], axis=1)
-    test_data = pd.concat([X_test, y_test], axis=1)
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
 
-    train_data.to_csv(train_file, index=False)
-    test_data.to_csv(test_file, index=False)
+# Apply scaling to numeric columns
+scaler = StandardScaler()
+X_train_scaled = X_train.copy()
+X_test_scaled = X_test.copy()
 
-    print(f"Training data saved to {train_file}")
-    print(f"Testing data saved to {test_file}")
+# Ensure numeric_columns in X_train_scaled and X_test_scaled are float64 before assignment
+X_train_scaled[numeric_columns] = X_train[numeric_columns].astype('float64')
+X_test_scaled[numeric_columns] = X_test[numeric_columns].astype('float64')
 
-# Main function
-def main():
-    input_file = 'data/refined_logs.csv'
-    train_file = 'data/train_logs.csv'
-    test_file = 'data/test_logs.csv'
+# Scale the numeric columns
+X_train_scaled[numeric_columns] = scaler.fit_transform(X_train_scaled[numeric_columns])
+X_test_scaled[numeric_columns] = scaler.transform(X_test_scaled[numeric_columns])
 
-    split_data(input_file, train_file, test_file)
 
-if __name__ == "__main__":
-    main()
+# Fit scaler on training data and transform both training and testing sets
+# Fit scaler on training data and transform both training and testing sets
+# X_train_scaled.loc[:, numeric_columns] = scaler.fit_transform(X_train[numeric_columns]).astype('float64')
+# X_test_scaled.loc[:, numeric_columns] = scaler.transform(X_test[numeric_columns]).astype('float64')
+
+
+# Save the scaler for reuse in model deployment
+import joblib
+joblib.dump(scaler, 'scaler.joblib')
+
+import joblib
+joblib.dump(X_train_scaled, "X_train_scaled.pkl")
+joblib.dump(X_test_scaled, "X_test_scaled.pkl")
+joblib.dump(y_train, "y_train.pkl")
+joblib.dump(y_test, "y_test.pkl")
+
+# Output shapes for confirmation
+print(f"X_train_scaled shape: {X_train_scaled.shape}")
+print(f"X_test_scaled shape: {X_test_scaled.shape}")
+print(f"y_train shape: {y_train.shape}")
+print(f"y_test shape: {y_test.shape}")
