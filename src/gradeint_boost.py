@@ -1,10 +1,10 @@
-# train_random_forest_enhanced.py
+# train_gradient_boosting_enhanced.py
 
 import pandas as pd
 import numpy as np
 import os
 import logging
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.model_selection import train_test_split, RandomizedSearchCV
 from sklearn.metrics import (
     accuracy_score, precision_score, recall_score, f1_score, 
@@ -14,17 +14,17 @@ from imblearn.over_sampling import SMOTE
 import joblib
 import matplotlib.pyplot as plt
 import seaborn as sns
-from scipy.stats import randint
+from scipy.stats import randint, uniform
 
-class RandomForestEnhancedTrainer:
-    def __init__(self, data_path, model_save_path='models/random_forest_model_enhanced.joblib', 
-                 predictions_save_path='data/random_forest_predictions_enhanced.csv'):
+class GradientBoostingEnhancedTrainer:
+    def __init__(self, data_path, model_save_path='models/gradient_boosting_model_enhanced.joblib', 
+                 predictions_save_path='data/gradient_boosting_predictions_enhanced.csv'):
         """
-        Initialize the RandomForestEnhancedTrainer with paths to data and where to save the model and predictions.
+        Initialize the GradientBoostingEnhancedTrainer with paths to data and where to save the model and predictions.
 
         Parameters:
         - data_path (str): Path to the final engineered CSV file.
-        - model_save_path (str): Path to save the trained Random Forest model.
+        - model_save_path (str): Path to save the trained Gradient Boosting model.
         - predictions_save_path (str): Path to save the predictions along with logid.
         """
         self.data_path = data_path
@@ -46,12 +46,12 @@ class RandomForestEnhancedTrainer:
         # Setup logging
         os.makedirs("logs", exist_ok=True)
         logging.basicConfig(
-            filename='logs/train_random_forest_enhanced.log',
+            filename='logs/train_gradient_boosting_enhanced.log',
             filemode='a',
             level=logging.INFO,
             format='%(asctime)s - %(levelname)s - %(message)s'
         )
-        logging.info("RandomForestEnhancedTrainer initialized.")
+        logging.info("GradientBoostingEnhancedTrainer initialized.")
 
     def print_columns(self, df, step_description):
         """
@@ -72,11 +72,11 @@ class RandomForestEnhancedTrainer:
         try:
             self.data = pd.read_csv(self.data_path)
             logging.info(f"Data loaded successfully with shape: {self.data.shape}")
-            print(f"Random Forest Training: Data loaded successfully with shape: {self.data.shape}")
+            print(f"Gradient Boosting Training: Data loaded successfully with shape: {self.data.shape}")
             self.print_columns(self.data, "loading data")
         except Exception as e:
             logging.error(f"Failed to load data from {self.data_path}: {e}")
-            print(f"Random Forest Training Error: Failed to load data with error: {e}")
+            print(f"Gradient Boosting Training Error: Failed to load data with error: {e}")
             raise
 
     def validate_data(self):
@@ -91,14 +91,14 @@ class RandomForestEnhancedTrainer:
             if missing_columns:
                 raise KeyError(f"Required columns are missing from the data: {missing_columns}")
             logging.info("Data validation passed.")
-            print("Random Forest Training: Data validation passed.")
+            print("Gradient Boosting Training: Data validation passed.")
         except KeyError as ke:
             logging.error(f"Data validation failed: {ke}")
-            print(f"Random Forest Training Error: Data validation failed with error: {ke}")
+            print(f"Gradient Boosting Training Error: Data validation failed with error: {ke}")
             raise
         except Exception as e:
             logging.error(f"Unexpected error during data validation: {e}")
-            print(f"Random Forest Training Error: Unexpected error during data validation: {e}")
+            print(f"Gradient Boosting Training Error: Unexpected error during data validation: {e}")
             raise
 
     def prepare_features(self):
@@ -110,15 +110,15 @@ class RandomForestEnhancedTrainer:
             self.y = self.data['anomalous']
             self.log_ids = self.data['logid']
             logging.info("Prepared feature matrix X and target vector y.")
-            print("Random Forest Training: Prepared feature matrix X and target vector y.")
+            print("Gradient Boosting Training: Prepared feature matrix X and target vector y.")
             self.print_columns(self.X, "preparing features")
         except KeyError as ke:
             logging.error(f"KeyError in preparing features: {ke}")
-            print(f"Random Forest Training Error: Preparing features failed with error: {ke}")
+            print(f"Gradient Boosting Training Error: Preparing features failed with error: {ke}")
             raise
         except Exception as e:
             logging.error(f"Error in preparing features: {e}")
-            print(f"Random Forest Training Error: Preparing features failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Preparing features failed with error: {e}")
             raise
 
     def split_data(self, test_size=0.2, random_state=42):
@@ -134,11 +134,11 @@ class RandomForestEnhancedTrainer:
                 self.X, self.y, self.log_ids, test_size=test_size, random_state=random_state, stratify=self.y
             )
             logging.info(f"Data split into train and test sets with test size {test_size}.")
-            print(f"Random Forest Training: Data split into train and test sets with test size {test_size}.")
+            print(f"Gradient Boosting Training: Data split into train and test sets with test size {test_size}.")
             print(f"Training set shape: {self.X_train.shape}, Testing set shape: {self.X_test.shape}")
         except Exception as e:
             logging.error(f"Error in splitting data: {e}")
-            print(f"Random Forest Training Error: Splitting data failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Splitting data failed with error: {e}")
             raise
 
     def resample_data(self):
@@ -149,17 +149,17 @@ class RandomForestEnhancedTrainer:
             smote = SMOTE(random_state=42)
             self.X_train_res, self.y_train_res = smote.fit_resample(self.X_train, self.y_train)
             logging.info("Applied SMOTE to balance the training data.")
-            print("Random Forest Training: Applied SMOTE to balance the training data.")
+            print("Gradient Boosting Training: Applied SMOTE to balance the training data.")
             # Optionally, visualize the resampled data distribution
             sns.countplot(x=self.y_train_res)
             plt.title('Distribution of Classes After SMOTE')
-            plt.savefig('models/random_forest_smote_distribution.png')
+            plt.savefig('models/gradient_boosting_smote_distribution.png')
             plt.close()
-            logging.info("SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.")
-            print("Random Forest Training: SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.")
+            logging.info("SMOTE distribution plot saved at 'models/gradient_boosting_smote_distribution.png'.")
+            print("Gradient Boosting Training: SMOTE distribution plot saved at 'models/gradient_boosting_smote_distribution.png'.")
         except Exception as e:
             logging.error(f"Error in resampling data: {e}")
-            print(f"Random Forest Training Error: Resampling data failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Resampling data failed with error: {e}")
             raise
 
     def hyperparameter_tuning(self):
@@ -169,19 +169,20 @@ class RandomForestEnhancedTrainer:
         try:
             param_dist = {
                 'n_estimators': randint(100, 500),
-                'max_depth': [None, 10, 20, 30],
+                'learning_rate': uniform(0.01, 0.29),  # 0.01 to 0.3
+                'max_depth': randint(3, 10),
                 'min_samples_split': randint(2, 11),
                 'min_samples_leaf': randint(1, 5),
-                'bootstrap': [True, False]
+                'subsample': uniform(0.5, 0.5)  # 0.5 to 1.0
             }
 
-            rf = RandomForestClassifier(random_state=42, class_weight='balanced', n_jobs=-1)
+            gb = GradientBoostingClassifier(random_state=42)
 
             random_search = RandomizedSearchCV(
-                estimator=rf,
+                estimator=gb,
                 param_distributions=param_dist,
-                n_iter=100,
-                cv=5,
+                n_iter=50,
+                cv=3,
                 scoring='f1',
                 random_state=42,
                 n_jobs=-1,
@@ -191,37 +192,36 @@ class RandomForestEnhancedTrainer:
             random_search.fit(self.X_train_res, self.y_train_res)
 
             self.model = random_search.best_estimator_
-            logging.info(f"Random Forest best parameters: {random_search.best_params_}")
-            print(f"Random Forest Training: Best parameters found: {random_search.best_params_}")
+            logging.info(f"Gradient Boosting best parameters: {random_search.best_params_}")
+            print(f"Gradient Boosting Training: Best parameters found: {random_search.best_params_}")
         except Exception as e:
             logging.error(f"Error in hyperparameter tuning: {e}")
-            print(f"Random Forest Training Error: Hyperparameter tuning failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Hyperparameter tuning failed with error: {e}")
             raise
 
     def train_model(self):
         """
-        Train the Random Forest model with optimized hyperparameters.
+        Train the Gradient Boosting model with optimized hyperparameters.
         """
         try:
             if self.model is None:
                 # If hyperparameter tuning wasn't done, train with default parameters
-                self.model = RandomForestClassifier(
+                self.model = GradientBoostingClassifier(
                     n_estimators=100,
-                    max_depth=None,
-                    random_state=42,
-                    class_weight='balanced',
-                    n_jobs=-1
+                    learning_rate=0.1,
+                    max_depth=3,
+                    random_state=42
                 )
                 self.model.fit(self.X_train_res, self.y_train_res)
-                logging.info("Random Forest model trained with default parameters.")
-                print("Random Forest Training: Model trained with default parameters.")
+                logging.info("Gradient Boosting model trained with default parameters.")
+                print("Gradient Boosting Training: Model trained with default parameters.")
             else:
                 # Model is already trained via hyperparameter tuning
-                logging.info("Random Forest model trained via hyperparameter tuning.")
-                print("Random Forest Training: Model trained via hyperparameter tuning.")
+                logging.info("Gradient Boosting model trained via hyperparameter tuning.")
+                print("Gradient Boosting Training: Model trained via hyperparameter tuning.")
         except Exception as e:
-            logging.error(f"Error in training Random Forest model: {e}")
-            print(f"Random Forest Training Error: Training model failed with error: {e}")
+            logging.error(f"Error in training Gradient Boosting model: {e}")
+            print(f"Gradient Boosting Training Error: Training model failed with error: {e}")
             raise
 
     def evaluate_model(self):
@@ -241,7 +241,7 @@ class RandomForestEnhancedTrainer:
             class_report = classification_report(self.y_test, y_pred)
 
             # Print metrics
-            print("\n--- Random Forest Model Evaluation Metrics ---")
+            print("\n--- Gradient Boosting Model Evaluation Metrics ---")
             print(f"Accuracy : {accuracy:.4f}")
             print(f"Precision: {precision:.4f}")
             print(f"Recall   : {recall:.4f}")
@@ -264,30 +264,30 @@ class RandomForestEnhancedTrainer:
             # Plot and save the confusion matrix
             plt.figure(figsize=(6, 4))
             sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues')
-            plt.title('Random Forest Confusion Matrix')
+            plt.title('Gradient Boosting Confusion Matrix')
             plt.xlabel('Predicted')
             plt.ylabel('Actual')
-            plt.savefig('models/random_forest_confusion_matrix.png')
+            plt.savefig('models/gradient_boosting_confusion_matrix.png')
             plt.close()
-            logging.info("Confusion matrix plot saved at 'models/random_forest_confusion_matrix.png'.")
-            print("Random Forest Training: Confusion matrix plot saved at 'models/random_forest_confusion_matrix.png'.")
+            logging.info("Confusion matrix plot saved at 'models/gradient_boosting_confusion_matrix.png'.")
+            print("Gradient Boosting Training: Confusion matrix plot saved at 'models/gradient_boosting_confusion_matrix.png'.")
 
             # Plot Precision-Recall Curve
             precision_vals, recall_vals, thresholds = precision_recall_curve(self.y_test, y_proba)
             plt.figure(figsize=(8, 6))
-            plt.plot(recall_vals, precision_vals, marker='.', label='Random Forest')
+            plt.plot(recall_vals, precision_vals, marker='.', label='Gradient Boosting')
             plt.xlabel('Recall')
             plt.ylabel('Precision')
-            plt.title('Random Forest Precision-Recall Curve')
+            plt.title('Gradient Boosting Precision-Recall Curve')
             plt.legend()
             plt.grid(True)
-            plt.savefig('models/random_forest_precision_recall_curve.png')
+            plt.savefig('models/gradient_boosting_precision_recall_curve.png')
             plt.close()
-            logging.info("Precision-Recall curve plot saved at 'models/random_forest_precision_recall_curve.png'.")
-            print("Random Forest Training: Precision-Recall curve plot saved at 'models/random_forest_precision_recall_curve.png'.")
+            logging.info("Precision-Recall curve plot saved at 'models/gradient_boosting_precision_recall_curve.png'.")
+            print("Gradient Boosting Training: Precision-Recall curve plot saved at 'models/gradient_boosting_precision_recall_curve.png'.")
         except Exception as e:
             logging.error(f"Error in evaluating model: {e}")
-            print(f"Random Forest Training Error: Evaluating model failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Evaluating model failed with error: {e}")
             raise
 
     def adjust_threshold(self):
@@ -309,7 +309,7 @@ class RandomForestEnhancedTrainer:
                 optimal_threshold = 0.5  # Fallback to default
 
             logging.info(f"Optimal threshold determined: {optimal_threshold:.4f}")
-            print(f"Random Forest Training: Optimal threshold determined: {optimal_threshold:.4f}")
+            print(f"Gradient Boosting Training: Optimal threshold determined: {optimal_threshold:.4f}")
 
             # Apply the new threshold
             y_pred_adjusted = (y_proba >= optimal_threshold).astype(int)
@@ -324,7 +324,7 @@ class RandomForestEnhancedTrainer:
             class_report = classification_report(self.y_test, y_pred_adjusted)
 
             # Print metrics
-            print("\n--- Random Forest Model Evaluation Metrics (Adjusted Threshold) ---")
+            print("\n--- Gradient Boosting Model Evaluation Metrics (Adjusted Threshold) ---")
             print(f"Accuracy : {accuracy:.4f}")
             print(f"Precision: {precision:.4f}")
             print(f"Recall   : {recall:.4f}")
@@ -351,12 +351,12 @@ class RandomForestEnhancedTrainer:
                 'actual': self.y_test,
                 'predicted': y_pred_adjusted
             })
-            adjusted_predictions_df.to_csv('data/random_forest_predictions_adjusted_threshold.csv', index=False)
-            logging.info(f"Adjusted threshold predictions saved successfully at 'data/random_forest_predictions_adjusted_threshold.csv'.")
-            print("Random Forest Training: Adjusted threshold predictions saved successfully at 'data/random_forest_predictions_adjusted_threshold.csv'.")
+            adjusted_predictions_df.to_csv('data/gradient_boosting_predictions_adjusted_threshold.csv', index=False)
+            logging.info(f"Adjusted threshold predictions saved successfully at 'data/gradient_boosting_predictions_adjusted_threshold.csv'.")
+            print("Gradient Boosting Training: Adjusted threshold predictions saved successfully at 'data/gradient_boosting_predictions_adjusted_threshold.csv'.")
         except Exception as e:
             logging.error(f"Error in adjusting threshold: {e}")
-            print(f"Random Forest Training Error: Adjusting threshold failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Adjusting threshold failed with error: {e}")
             raise
 
     def plot_feature_importance(self):
@@ -369,18 +369,18 @@ class RandomForestEnhancedTrainer:
 
             plt.figure(figsize=(10, 8))
             sns.barplot(x=top_features.values, y=top_features.index)
-            plt.title('Random Forest Top 20 Feature Importances')
+            plt.title('Gradient Boosting Top 20 Feature Importances')
             plt.xlabel('Importance Score')
             plt.ylabel('Features')
             plt.tight_layout()
-            plt.savefig('models/random_forest_feature_importances.png')
+            plt.savefig('models/gradient_boosting_feature_importances.png')
             plt.close()
 
-            logging.info("Feature importance plot saved at 'models/random_forest_feature_importances.png'.")
-            print("Random Forest Training: Feature importance plot saved at 'models/random_forest_feature_importances.png'.")
+            logging.info("Feature importance plot saved at 'models/gradient_boosting_feature_importances.png'.")
+            print("Gradient Boosting Training: Feature importance plot saved at 'models/gradient_boosting_feature_importances.png'.")
         except Exception as e:
             logging.error(f"Error in plotting feature importances: {e}")
-            print(f"Random Forest Training Error: Plotting feature importances failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Plotting feature importances failed with error: {e}")
             raise
 
     def save_model(self):
@@ -390,11 +390,11 @@ class RandomForestEnhancedTrainer:
         try:
             os.makedirs(os.path.dirname(self.model_save_path), exist_ok=True)
             joblib.dump(self.model, self.model_save_path)
-            logging.info(f"Random Forest model saved successfully at '{self.model_save_path}'.")
-            print(f"Random Forest Training: Model saved successfully at '{self.model_save_path}'.")
+            logging.info(f"Gradient Boosting model saved successfully at '{self.model_save_path}'.")
+            print(f"Gradient Boosting Training: Model saved successfully at '{self.model_save_path}'.")
         except Exception as e:
-            logging.error(f"Failed to save Random Forest model: {e}")
-            print(f"Random Forest Training Error: Saving model failed with error: {e}")
+            logging.error(f"Failed to save Gradient Boosting model: {e}")
+            print(f"Gradient Boosting Training Error: Saving model failed with error: {e}")
             raise
 
     def save_predictions(self):
@@ -410,10 +410,10 @@ class RandomForestEnhancedTrainer:
             })
             predictions_df.to_csv(self.predictions_save_path, index=False)
             logging.info(f"Predictions saved successfully at '{self.predictions_save_path}'.")
-            print(f"Random Forest Training: Predictions saved successfully at '{self.predictions_save_path}'.")
+            print(f"Gradient Boosting Training: Predictions saved successfully at '{self.predictions_save_path}'.")
         except Exception as e:
             logging.error(f"Failed to save predictions: {e}")
-            print(f"Random Forest Training Error: Saving predictions failed with error: {e}")
+            print(f"Gradient Boosting Training Error: Saving predictions failed with error: {e}")
             raise
 
     def run(self):
@@ -433,17 +433,17 @@ class RandomForestEnhancedTrainer:
             self.plot_feature_importance()
             self.save_model()
             self.save_predictions()
-            logging.info("Random Forest Enhanced training pipeline completed successfully.")
-            print("\nRandom Forest Enhanced training pipeline completed successfully.")
+            logging.info("Gradient Boosting Enhanced training pipeline completed successfully.")
+            print("\nGradient Boosting Enhanced training pipeline completed successfully.")
         except Exception as e:
             logging.error(f"Training pipeline failed: {e}")
-            print(f"\nRandom Forest Training Error: {e}")
+            print(f"\nGradient Boosting Training Error: {e}")
 
 if __name__ == "__main__":
     # Define file paths
     final_engineered_features_path = "data/final_engineered_features.csv"
-    random_forest_model_path = "models/random_forest_model_enhanced.joblib"
-    random_forest_predictions_path = "data/random_forest_predictions_enhanced.csv"
+    gradient_boosting_model_path = "models/gradient_boosting_model_enhanced.joblib"
+    gradient_boosting_predictions_path = "data/gradient_boosting_predictions_enhanced.csv"
 
     # Ensure the 'data' and 'models' directories exist
     os.makedirs("data", exist_ok=True)
@@ -451,11 +451,11 @@ if __name__ == "__main__":
     os.makedirs("logs", exist_ok=True)
 
     # Initialize the enhanced trainer
-    rf_trainer = RandomForestEnhancedTrainer(
+    gb_trainer = GradientBoostingEnhancedTrainer(
         data_path=final_engineered_features_path,
-        model_save_path=random_forest_model_path,
-        predictions_save_path=random_forest_predictions_path
+        model_save_path=gradient_boosting_model_path,
+        predictions_save_path=gradient_boosting_predictions_path
     )
 
     # Run the training pipeline
-    rf_trainer.run()
+    gb_trainer.run()

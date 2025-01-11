@@ -1,0 +1,29 @@
+2025-01-09 14:26:55,323 - INFO - GradientBoostingTrainer initialized.
+2025-01-09 14:26:55,354 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 14:26:55,355 - INFO - Columns after loading data: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'anomalous', 'logid', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 14:26:55,355 - INFO - Data validation passed.
+2025-01-09 14:26:55,356 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 14:26:55,356 - INFO - Columns after preparing features: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 14:26:55,361 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 14:26:56,235 - INFO - Gradient Boosting model trained with n_estimators=100, learning_rate=0.1, max_depth=3.
+2025-01-09 14:26:56,261 - INFO - Accuracy: 0.9614
+2025-01-09 14:26:56,262 - INFO - Precision: 1.0000
+2025-01-09 14:26:56,262 - INFO - Recall: 0.8650
+2025-01-09 14:26:56,262 - INFO - F1-Score: 0.9276
+2025-01-09 14:26:56,262 - INFO - ROC-AUC: 0.9825
+2025-01-09 14:26:56,263 - INFO - Confusion Matrix:
+[[1000    0]
+ [  54  346]]
+2025-01-09 14:26:56,263 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      1.00      0.97      1000
+           1       1.00      0.86      0.93       400
+
+    accuracy                           0.96      1400
+   macro avg       0.97      0.93      0.95      1400
+weighted avg       0.96      0.96      0.96      1400
+
+2025-01-09 14:26:56,271 - INFO - Gradient Boosting model saved successfully at 'models/gradient_boosting_model.joblib'.
+2025-01-09 14:26:56,280 - INFO - Predictions saved successfully at 'data/gradient_boosting_predictions.csv'.
+2025-01-09 14:26:56,281 - INFO - Gradient Boosting training pipeline completed successfully.

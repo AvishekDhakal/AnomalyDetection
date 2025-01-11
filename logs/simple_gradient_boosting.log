@@ -1,0 +1,53 @@
+2025-01-09 20:49:05,468 - INFO - Logging is set up.
+2025-01-09 20:49:05,508 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 20:49:05,509 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 20:49:05,514 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 20:49:05,568 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 20:49:05,933 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:49:05,940 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:49:06,034 - INFO - SMOTE distribution plot saved at 'models/simple_gradient_boosting_smote_distribution.png'.
+2025-01-09 21:01:17,332 - INFO - Gradient Boosting Best parameters found: {'learning_rate': 0.1, 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 5, 'n_estimators': 200}
+2025-01-09 21:01:21,684 - INFO - Gradient Boosting model trained with best parameters.
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting Accuracy: 0.9571
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting Precision: 0.9830
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting Recall: 0.8650
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting F1-Score: 0.9202
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting ROC-AUC: 0.9811
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting Confusion Matrix:
+[[994   6]
+ [ 54 346]]
+2025-01-09 21:01:21,715 - INFO - Gradient Boosting Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.98      0.86      0.92       400
+
+    accuracy                           0.96      1400
+   macro avg       0.97      0.93      0.95      1400
+weighted avg       0.96      0.96      0.96      1400
+
+2025-01-09 21:01:21,865 - INFO - Gradient Boosting confusion matrix plot saved at 'models/simple_gradient_boosting_confusion_matrix.png'.
+2025-01-09 21:01:21,981 - INFO - Gradient Boosting Precision-Recall curve plot saved at 'models/simple_gradient_boosting_precision_recall_curve.png'.
+2025-01-09 21:01:21,990 - INFO - Gradient Boosting Optimal threshold determined: 0.1880
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold Accuracy: 0.9107
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold Precision: 0.8090
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold Recall: 0.9000
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold F1-Score: 0.8521
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold ROC-AUC: 0.9811
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold Confusion Matrix:
+[[915  85]
+ [ 40 360]]
+2025-01-09 21:01:22,004 - INFO - Gradient Boosting Adjusted Threshold Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.92      0.94      1000
+           1       0.81      0.90      0.85       400
+
+    accuracy                           0.91      1400
+   macro avg       0.88      0.91      0.89      1400
+weighted avg       0.92      0.91      0.91      1400
+
+2025-01-09 21:01:22,007 - INFO - Gradient Boosting Adjusted threshold predictions saved successfully at 'data/simple_gradient_boosting_predictions_adjusted_threshold.csv'.
+2025-01-09 21:01:22,225 - INFO - Gradient Boosting feature importance plot saved at 'models/simple_gradient_boosting_feature_importances.png'.
+2025-01-09 21:01:22,233 - INFO - Model saved successfully at 'models/simple_gradient_boosting_model.joblib'.
+2025-01-09 21:01:22,243 - INFO - Initial predictions saved successfully at 'data/simple_gradient_boosting_predictions.csv'.

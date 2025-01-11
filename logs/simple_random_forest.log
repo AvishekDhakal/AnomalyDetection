@@ -1,0 +1,157 @@
+2025-01-09 20:15:39,723 - INFO - Logging is set up.
+2025-01-09 20:15:39,749 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 20:15:39,751 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 20:15:39,755 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 20:15:39,796 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 20:15:40,124 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:15:40,134 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:15:40,267 - INFO - SMOTE distribution plot saved at 'models/simple_random_forest_smote_distribution.png'.
+2025-01-09 20:15:40,601 - INFO - Random Forest model trained successfully.
+2025-01-09 20:15:40,670 - INFO - Random Forest Accuracy: 0.9421
+2025-01-09 20:15:40,670 - INFO - Random Forest Precision: 0.9443
+2025-01-09 20:15:40,670 - INFO - Random Forest Recall: 0.8475
+2025-01-09 20:15:40,670 - INFO - Random Forest F1-Score: 0.8933
+2025-01-09 20:15:40,670 - INFO - Random Forest ROC-AUC: 0.9828
+2025-01-09 20:15:40,671 - INFO - Random Forest Confusion Matrix:
+[[980  20]
+ [ 61 339]]
+2025-01-09 20:15:40,671 - INFO - Random Forest Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.98      0.96      1000
+           1       0.94      0.85      0.89       400
+
+    accuracy                           0.94      1400
+   macro avg       0.94      0.91      0.93      1400
+weighted avg       0.94      0.94      0.94      1400
+
+2025-01-09 20:15:40,882 - INFO - Random Forest confusion matrix plot saved at 'models/simple_random_forest_confusion_matrix.png'.
+2025-01-09 20:15:41,066 - INFO - Random Forest Precision-Recall curve plot saved at 'models/simple_random_forest_precision_recall_curve.png'.
+2025-01-09 20:15:41,094 - INFO - Random Forest Optimal threshold determined: 0.4000
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold Accuracy: 0.9393
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold Precision: 0.9008
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold Recall: 0.8850
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold F1-Score: 0.8928
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold ROC-AUC: 0.9828
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold Confusion Matrix:
+[[961  39]
+ [ 46 354]]
+2025-01-09 20:15:41,111 - INFO - Random Forest Adjusted Threshold Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.96      0.96      1000
+           1       0.90      0.89      0.89       400
+
+    accuracy                           0.94      1400
+   macro avg       0.93      0.92      0.93      1400
+weighted avg       0.94      0.94      0.94      1400
+
+2025-01-09 20:15:41,115 - INFO - Random Forest Adjusted threshold predictions saved successfully at 'data/simple_random_forest_predictions_adjusted_threshold.csv'.
+2025-01-09 20:15:41,148 - INFO - Model saved successfully at 'models/simple_random_forest_model.joblib'.
+2025-01-09 20:15:41,176 - INFO - Initial predictions saved successfully at 'data/simple_random_forest_predictions.csv'.
+2025-01-09 20:21:47,412 - INFO - Logging is set up.
+2025-01-09 20:21:47,443 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 20:21:47,444 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 20:21:47,449 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 20:21:47,493 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 20:21:47,784 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:21:47,792 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:21:47,873 - INFO - SMOTE distribution plot saved at 'models/simple_random_forest_smote_distribution.png'.
+2025-01-09 20:22:43,342 - INFO - Random Forest Best parameters found: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+2025-01-09 20:22:43,979 - INFO - Random Forest model trained with best parameters.
+2025-01-09 20:22:44,116 - INFO - Random Forest Accuracy: 0.9507
+2025-01-09 20:22:44,116 - INFO - Random Forest Precision: 0.9636
+2025-01-09 20:22:44,116 - INFO - Random Forest Recall: 0.8600
+2025-01-09 20:22:44,116 - INFO - Random Forest F1-Score: 0.9089
+2025-01-09 20:22:44,116 - INFO - Random Forest ROC-AUC: 0.9829
+2025-01-09 20:22:44,116 - INFO - Random Forest Confusion Matrix:
+[[987  13]
+ [ 56 344]]
+2025-01-09 20:22:44,116 - INFO - Random Forest Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.96      0.86      0.91       400
+
+    accuracy                           0.95      1400
+   macro avg       0.95      0.92      0.94      1400
+weighted avg       0.95      0.95      0.95      1400
+
+2025-01-09 20:22:44,260 - INFO - Random Forest confusion matrix plot saved at 'models/simple_random_forest_confusion_matrix.png'.
+2025-01-09 20:22:44,396 - INFO - Random Forest Precision-Recall curve plot saved at 'models/simple_random_forest_precision_recall_curve.png'.
+2025-01-09 20:22:44,453 - INFO - Random Forest Optimal threshold determined: 0.3700
+2025-01-09 20:22:44,467 - INFO - Random Forest Adjusted Threshold Accuracy: 0.9386
+2025-01-09 20:22:44,468 - INFO - Random Forest Adjusted Threshold Precision: 0.8867
+2025-01-09 20:22:44,468 - INFO - Random Forest Adjusted Threshold Recall: 0.9000
+2025-01-09 20:22:44,468 - INFO - Random Forest Adjusted Threshold F1-Score: 0.8933
+2025-01-09 20:22:44,468 - INFO - Random Forest Adjusted Threshold ROC-AUC: 0.9829
+2025-01-09 20:22:44,468 - INFO - Random Forest Adjusted Threshold Confusion Matrix:
+[[954  46]
+ [ 40 360]]
+2025-01-09 20:22:44,468 - INFO - Random Forest Adjusted Threshold Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1000
+           1       0.89      0.90      0.89       400
+
+    accuracy                           0.94      1400
+   macro avg       0.92      0.93      0.93      1400
+weighted avg       0.94      0.94      0.94      1400
+
+2025-01-09 20:22:44,471 - INFO - Random Forest Adjusted threshold predictions saved successfully at 'data/simple_random_forest_predictions_adjusted_threshold.csv'.
+2025-01-09 20:22:44,750 - INFO - Random Forest feature importance plot saved at 'models/simple_random_forest_feature_importances.png'.
+2025-01-09 20:22:44,865 - INFO - Model saved successfully at 'models/simple_random_forest_model.joblib'.
+2025-01-09 20:22:44,925 - INFO - Initial predictions saved successfully at 'data/simple_random_forest_predictions.csv'.
+2025-01-10 09:34:39,643 - INFO - Logging is set up.
+2025-01-10 09:34:39,680 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-10 09:34:39,681 - INFO - Prepared feature matrix X and target vector y.
+2025-01-10 09:34:39,687 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-10 09:34:39,759 - INFO - Applied SMOTE to balance the training data.
+2025-01-10 09:34:40,102 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-10 09:34:40,108 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-10 09:34:40,214 - INFO - SMOTE distribution plot saved at 'models/simple_random_forest_smote_distribution.png'.
+2025-01-10 09:35:33,569 - INFO - Random Forest Best parameters found: {'max_depth': None, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 300}
+2025-01-10 09:35:34,586 - INFO - Random Forest model trained with best parameters.
+2025-01-10 09:35:34,801 - INFO - Random Forest Accuracy: 0.9507
+2025-01-10 09:35:34,801 - INFO - Random Forest Precision: 0.9636
+2025-01-10 09:35:34,801 - INFO - Random Forest Recall: 0.8600
+2025-01-10 09:35:34,801 - INFO - Random Forest F1-Score: 0.9089
+2025-01-10 09:35:34,801 - INFO - Random Forest ROC-AUC: 0.9829
+2025-01-10 09:35:34,801 - INFO - Random Forest Confusion Matrix:
+[[987  13]
+ [ 56 344]]
+2025-01-10 09:35:34,801 - INFO - Random Forest Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.96      0.86      0.91       400
+
+    accuracy                           0.95      1400
+   macro avg       0.95      0.92      0.94      1400
+weighted avg       0.95      0.95      0.95      1400
+
+2025-01-10 09:35:34,989 - INFO - Random Forest confusion matrix plot saved at 'models/simple_random_forest_confusion_matrix.png'.
+2025-01-10 09:35:35,179 - INFO - Random Forest Precision-Recall curve plot saved at 'models/simple_random_forest_precision_recall_curve.png'.
+2025-01-10 09:35:35,246 - INFO - Random Forest Optimal threshold determined: 0.3700
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold Accuracy: 0.9386
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold Precision: 0.8867
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold Recall: 0.9000
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold F1-Score: 0.8933
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold ROC-AUC: 0.9829
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold Confusion Matrix:
+[[954  46]
+ [ 40 360]]
+2025-01-10 09:35:35,265 - INFO - Random Forest Adjusted Threshold Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.95      0.96      1000
+           1       0.89      0.90      0.89       400
+
+    accuracy                           0.94      1400
+   macro avg       0.92      0.93      0.93      1400
+weighted avg       0.94      0.94      0.94      1400
+
+2025-01-10 09:35:35,273 - INFO - Random Forest Adjusted threshold predictions saved successfully at 'data/simple_random_forest_predictions_adjusted_threshold.csv'.
+2025-01-10 09:35:35,699 - INFO - Random Forest feature importance plot saved at 'models/simple_random_forest_feature_importances.png'.
+2025-01-10 09:35:35,842 - INFO - Model saved successfully at 'models/simple_random_forest_model.joblib'.
+2025-01-10 09:35:35,926 - INFO - Initial predictions saved successfully at 'data/simple_random_forest_predictions.csv'.

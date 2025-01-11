@@ -1,0 +1,220 @@
+2025-01-09 14:33:06,285 - INFO - RandomForestEnhancedTrainer initialized.
+2025-01-09 14:33:06,321 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 14:33:06,322 - INFO - Columns after loading data: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'anomalous', 'logid', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 14:33:06,322 - INFO - Data validation passed.
+2025-01-09 14:33:06,323 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 14:33:06,323 - INFO - Columns after preparing features: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 14:33:06,330 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 14:33:06,391 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 14:33:06,759 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 14:33:06,767 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 14:33:06,925 - INFO - SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.
+2025-01-09 15:21:39,410 - INFO - RandomForestEnhancedTrainer initialized.
+2025-01-09 15:21:39,445 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 15:21:39,445 - INFO - Columns after loading data: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'anomalous', 'logid', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 15:21:39,445 - INFO - Data validation passed.
+2025-01-09 15:21:39,446 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 15:21:39,446 - INFO - Columns after preparing features: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 15:21:39,451 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 15:21:39,493 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 15:21:39,811 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 15:21:39,817 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 15:21:39,927 - INFO - SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.
+2025-01-09 15:24:07,190 - INFO - Random Forest best parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 6, 'n_estimators': 324}
+2025-01-09 15:24:07,190 - INFO - Random Forest model trained via hyperparameter tuning.
+2025-01-09 15:24:07,425 - INFO - Accuracy: 0.9521
+2025-01-09 15:24:07,425 - INFO - Precision: 0.9664
+2025-01-09 15:24:07,426 - INFO - Recall: 0.8625
+2025-01-09 15:24:07,426 - INFO - F1-Score: 0.9115
+2025-01-09 15:24:07,426 - INFO - ROC-AUC: 0.9828
+2025-01-09 15:24:07,426 - INFO - Confusion Matrix:
+[[988  12]
+ [ 55 345]]
+2025-01-09 15:24:07,426 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.97      0.86      0.91       400
+
+    accuracy                           0.95      1400
+   macro avg       0.96      0.93      0.94      1400
+weighted avg       0.95      0.95      0.95      1400
+
+2025-01-09 15:24:07,627 - INFO - Confusion matrix plot saved at 'models/random_forest_confusion_matrix.png'.
+2025-01-09 15:24:07,915 - INFO - Precision-Recall curve plot saved at 'models/random_forest_precision_recall_curve.png'.
+2025-01-09 15:24:08,016 - ERROR - Error in adjusting threshold: index 486 is out of bounds for axis 0 with size 486
+2025-01-09 15:24:08,016 - ERROR - Training pipeline failed: index 486 is out of bounds for axis 0 with size 486
+2025-01-09 19:32:04,361 - INFO - RandomForestEnhancedTrainer initialized.
+2025-01-09 19:32:04,426 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 19:32:04,427 - INFO - Columns after loading data: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'anomalous', 'logid', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 19:32:04,428 - INFO - Data validation passed.
+2025-01-09 19:32:04,431 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 19:32:04,431 - INFO - Columns after preparing features: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 19:32:04,443 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 19:32:04,533 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 19:32:05,025 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 19:32:05,035 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 19:32:05,251 - INFO - SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.
+2025-01-09 19:34:05,119 - INFO - Random Forest best parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 6, 'n_estimators': 324}
+2025-01-09 19:34:05,119 - INFO - Random Forest model trained via hyperparameter tuning.
+2025-01-09 19:34:05,565 - INFO - Accuracy: 0.9521
+2025-01-09 19:34:05,565 - INFO - Precision: 0.9664
+2025-01-09 19:34:05,566 - INFO - Recall: 0.8625
+2025-01-09 19:34:05,566 - INFO - F1-Score: 0.9115
+2025-01-09 19:34:05,566 - INFO - ROC-AUC: 0.9828
+2025-01-09 19:34:05,566 - INFO - Confusion Matrix:
+[[988  12]
+ [ 55 345]]
+2025-01-09 19:34:05,566 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.97      0.86      0.91       400
+
+    accuracy                           0.95      1400
+   macro avg       0.96      0.93      0.94      1400
+weighted avg       0.95      0.95      0.95      1400
+
+2025-01-09 19:34:05,951 - INFO - Confusion matrix plot saved at 'models/random_forest_confusion_matrix.png'.
+2025-01-09 19:34:06,383 - INFO - Precision-Recall curve plot saved at 'models/random_forest_precision_recall_curve.png'.
+2025-01-09 19:34:06,517 - INFO - Optimal threshold determined: 1.0000
+2025-01-09 19:34:06,552 - INFO - Adjusted Threshold Metrics:
+2025-01-09 19:34:06,552 - INFO - Accuracy: 0.8307
+2025-01-09 19:34:06,552 - INFO - Precision: 1.0000
+2025-01-09 19:34:06,552 - INFO - Recall: 0.4075
+2025-01-09 19:34:06,552 - INFO - F1-Score: 0.5790
+2025-01-09 19:34:06,552 - INFO - ROC-AUC: 0.9828
+2025-01-09 19:34:06,553 - INFO - Confusion Matrix:
+[[1000    0]
+ [ 237  163]]
+2025-01-09 19:34:06,553 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.81      1.00      0.89      1000
+           1       1.00      0.41      0.58       400
+
+    accuracy                           0.83      1400
+   macro avg       0.90      0.70      0.74      1400
+weighted avg       0.86      0.83      0.80      1400
+
+2025-01-09 19:34:06,565 - INFO - Adjusted threshold predictions saved successfully at 'data/random_forest_predictions_adjusted_threshold.csv'.
+2025-01-09 19:34:07,271 - INFO - Feature importance plot saved at 'models/random_forest_feature_importances.png'.
+2025-01-09 19:34:07,549 - INFO - Random Forest model saved successfully at 'models/random_forest_model_enhanced.joblib'.
+2025-01-09 19:34:07,751 - INFO - Predictions saved successfully at 'data/random_forest_predictions_enhanced.csv'.
+2025-01-09 19:34:07,751 - INFO - Random Forest Enhanced training pipeline completed successfully.
+2025-01-09 20:06:19,581 - INFO - RandomForestEnhancedTrainer initialized.
+2025-01-09 20:06:19,607 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 20:06:19,608 - INFO - Columns after loading data: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'anomalous', 'logid', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 20:06:19,608 - INFO - Data validation passed.
+2025-01-09 20:06:19,608 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 20:06:19,609 - INFO - Columns after preparing features: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 20:06:19,613 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 20:06:19,652 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 20:06:19,907 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:06:19,913 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:06:19,991 - INFO - SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.
+2025-01-09 20:08:04,499 - INFO - Random Forest best parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 6, 'n_estimators': 324}
+2025-01-09 20:08:04,500 - INFO - Random Forest model trained via hyperparameter tuning.
+2025-01-09 20:08:04,657 - INFO - Accuracy: 0.9521
+2025-01-09 20:08:04,657 - INFO - Precision: 0.9664
+2025-01-09 20:08:04,657 - INFO - Recall: 0.8625
+2025-01-09 20:08:04,658 - INFO - F1-Score: 0.9115
+2025-01-09 20:08:04,658 - INFO - ROC-AUC: 0.9828
+2025-01-09 20:08:04,658 - INFO - Confusion Matrix:
+[[988  12]
+ [ 55 345]]
+2025-01-09 20:08:04,658 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.97      0.86      0.91       400
+
+    accuracy                           0.95      1400
+   macro avg       0.96      0.93      0.94      1400
+weighted avg       0.95      0.95      0.95      1400
+
+2025-01-09 20:08:04,808 - INFO - Confusion matrix plot saved at 'models/random_forest_confusion_matrix.png'.
+2025-01-09 20:08:04,942 - INFO - Precision-Recall curve plot saved at 'models/random_forest_precision_recall_curve.png'.
+2025-01-09 20:08:04,998 - INFO - Optimal threshold determined: 1.0000
+2025-01-09 20:08:05,013 - INFO - Adjusted Threshold Metrics:
+2025-01-09 20:08:05,013 - INFO - Accuracy: 0.8307
+2025-01-09 20:08:05,013 - INFO - Precision: 1.0000
+2025-01-09 20:08:05,013 - INFO - Recall: 0.4075
+2025-01-09 20:08:05,013 - INFO - F1-Score: 0.5790
+2025-01-09 20:08:05,013 - INFO - ROC-AUC: 0.9828
+2025-01-09 20:08:05,013 - INFO - Confusion Matrix:
+[[1000    0]
+ [ 237  163]]
+2025-01-09 20:08:05,013 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.81      1.00      0.89      1000
+           1       1.00      0.41      0.58       400
+
+    accuracy                           0.83      1400
+   macro avg       0.90      0.70      0.74      1400
+weighted avg       0.86      0.83      0.80      1400
+
+2025-01-09 20:08:05,017 - INFO - Adjusted threshold predictions saved successfully at 'data/random_forest_predictions_adjusted_threshold.csv'.
+2025-01-09 20:08:05,302 - INFO - Feature importance plot saved at 'models/random_forest_feature_importances.png'.
+2025-01-09 20:08:05,395 - INFO - Random Forest model saved successfully at 'models/random_forest_model_enhanced.joblib'.
+2025-01-09 20:08:05,454 - INFO - Predictions saved successfully at 'data/random_forest_predictions_enhanced.csv'.
+2025-01-09 20:08:05,454 - INFO - Random Forest Enhanced training pipeline completed successfully.
+2025-01-09 20:11:20,802 - INFO - RandomForestEnhancedTrainer initialized.
+2025-01-09 20:11:20,827 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-09 20:11:20,827 - INFO - Columns after loading data: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'anomalous', 'logid', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 20:11:20,827 - INFO - Data validation passed.
+2025-01-09 20:11:20,828 - INFO - Prepared feature matrix X and target vector y.
+2025-01-09 20:11:20,828 - INFO - Columns after preparing features: ['hour', 'dayofweek', 'month', 'day', 'weekofyear', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records', 'access_per_unique_endpoint', 'access_per_hour', 'is_peak_hour', 'is_weekend', 'average_access_per_user', 'endpoint_popularity', 'role_Doctor_non_peak_1', 'role_Nurse_non_peak_1', 'role_Staff_non_peak_1', 'http_method_GET_freq_settings', 'http_method_GET_freq_invoices', 'http_method_GET_freq_items', 'http_method_GET_freq_records', 'http_method_POST_freq_settings', 'http_method_POST_freq_invoices', 'http_method_POST_freq_items', 'http_method_POST_freq_records', 'http_method_PUT_freq_settings', 'http_method_PUT_freq_invoices', 'http_method_PUT_freq_items', 'http_method_PUT_freq_records']
+2025-01-09 20:11:20,832 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-09 20:11:20,879 - INFO - Applied SMOTE to balance the training data.
+2025-01-09 20:11:21,134 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:11:21,140 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-09 20:11:21,213 - INFO - SMOTE distribution plot saved at 'models/random_forest_smote_distribution.png'.
+2025-01-09 20:13:06,672 - INFO - Random Forest best parameters: {'bootstrap': False, 'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 6, 'n_estimators': 324}
+2025-01-09 20:13:06,672 - INFO - Random Forest model trained via hyperparameter tuning.
+2025-01-09 20:13:06,819 - INFO - Accuracy: 0.9521
+2025-01-09 20:13:06,819 - INFO - Precision: 0.9664
+2025-01-09 20:13:06,819 - INFO - Recall: 0.8625
+2025-01-09 20:13:06,819 - INFO - F1-Score: 0.9115
+2025-01-09 20:13:06,820 - INFO - ROC-AUC: 0.9828
+2025-01-09 20:13:06,820 - INFO - Confusion Matrix:
+[[988  12]
+ [ 55 345]]
+2025-01-09 20:13:06,820 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.97      0.86      0.91       400
+
+    accuracy                           0.95      1400
+   macro avg       0.96      0.93      0.94      1400
+weighted avg       0.95      0.95      0.95      1400
+
+2025-01-09 20:13:06,974 - INFO - Confusion matrix plot saved at 'models/random_forest_confusion_matrix.png'.
+2025-01-09 20:13:07,114 - INFO - Precision-Recall curve plot saved at 'models/random_forest_precision_recall_curve.png'.
+2025-01-09 20:13:07,180 - INFO - Optimal threshold determined: 1.0000
+2025-01-09 20:13:07,195 - INFO - Adjusted Threshold Metrics:
+2025-01-09 20:13:07,195 - INFO - Accuracy: 0.8307
+2025-01-09 20:13:07,195 - INFO - Precision: 1.0000
+2025-01-09 20:13:07,195 - INFO - Recall: 0.4075
+2025-01-09 20:13:07,195 - INFO - F1-Score: 0.5790
+2025-01-09 20:13:07,195 - INFO - ROC-AUC: 0.9828
+2025-01-09 20:13:07,195 - INFO - Confusion Matrix:
+[[1000    0]
+ [ 237  163]]
+2025-01-09 20:13:07,195 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.81      1.00      0.89      1000
+           1       1.00      0.41      0.58       400
+
+    accuracy                           0.83      1400
+   macro avg       0.90      0.70      0.74      1400
+weighted avg       0.86      0.83      0.80      1400
+
+2025-01-09 20:13:07,200 - INFO - Adjusted threshold predictions saved successfully at 'data/random_forest_predictions_adjusted_threshold.csv'.
+2025-01-09 20:13:07,479 - INFO - Feature importance plot saved at 'models/random_forest_feature_importances.png'.
+2025-01-09 20:13:07,575 - INFO - Random Forest model saved successfully at 'models/random_forest_model_enhanced.joblib'.
+2025-01-09 20:13:07,634 - INFO - Predictions saved successfully at 'data/random_forest_predictions_enhanced.csv'.
+2025-01-09 20:13:07,634 - INFO - Random Forest Enhanced training pipeline completed successfully.

@@ -1,0 +1,71 @@
+2025-01-09 13:58:16,510 - INFO - DataPreprocessor initialized.
+2025-01-09 13:58:16,511 - ERROR - Failed to load data from data/raw_logs.csv: [Errno 2] No such file or directory: 'data/raw_logs.csv'
+2025-01-09 13:58:16,511 - ERROR - Preprocessing failed: [Errno 2] No such file or directory: 'data/raw_logs.csv'
+2025-01-09 13:58:16,511 - ERROR - An error occurred during preprocessing: [Errno 2] No such file or directory: 'data/raw_logs.csv'
+2025-01-09 13:58:36,593 - INFO - DataPreprocessor initialized.
+2025-01-09 13:58:36,632 - INFO - Data loaded successfully with shape: (14000, 8)
+2025-01-09 13:58:36,632 - INFO - Raw columns: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 13:58:36,632 - INFO - Columns after loading data: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 13:58:36,632 - ERROR - Error in handling missing values: list.remove(x): x not in list
+2025-01-09 13:58:36,632 - ERROR - Preprocessing failed: list.remove(x): x not in list
+2025-01-09 13:58:36,632 - ERROR - An error occurred during preprocessing: list.remove(x): x not in list
+2025-01-09 13:59:39,742 - INFO - DataPreprocessor initialized.
+2025-01-09 13:59:39,758 - INFO - Data loaded successfully with shape: (7000, 8)
+2025-01-09 13:59:39,758 - INFO - Raw columns: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 13:59:39,758 - INFO - Columns after loading data: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 13:59:39,759 - ERROR - Error in handling missing values: list.remove(x): x not in list
+2025-01-09 13:59:39,759 - ERROR - Preprocessing failed: list.remove(x): x not in list
+2025-01-09 13:59:39,759 - ERROR - An error occurred during preprocessing: list.remove(x): x not in list
+2025-01-09 14:01:53,343 - INFO - DataPreprocessor initialized.
+2025-01-09 14:01:53,343 - ERROR - Failed to load data from data/master_logs.csv: [Errno 2] No such file or directory: 'data/master_logs.csv'
+2025-01-09 14:01:53,343 - ERROR - Preprocessing failed: [Errno 2] No such file or directory: 'data/master_logs.csv'
+2025-01-09 14:01:53,344 - INFO - DataPreprocessor initialized.
+2025-01-09 14:01:53,344 - ERROR - Failed to load preprocessor: [Errno 2] No such file or directory: 'data/preprocessor.joblib'
+2025-01-09 14:02:29,825 - INFO - DataPreprocessor initialized.
+2025-01-09 14:02:29,847 - INFO - Data loaded successfully with shape: (7000, 8)
+2025-01-09 14:02:29,847 - INFO - Raw columns: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 14:02:29,848 - INFO - Columns after loading data: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 14:02:29,870 - INFO - Missing values handled successfully.
+2025-01-09 14:02:29,870 - INFO - Columns after handling missing values: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address', 'anomalous']
+2025-01-09 14:02:29,887 - INFO - Timestamp converted and new time-based features extracted.
+2025-01-09 14:02:29,887 - INFO - Columns after converting timestamp: ['logid', 'userid', 'role', 'http_method', 'endpoint', 'ip_address', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear']
+2025-01-09 14:02:29,902 - INFO - BaseEndpoint and EndpointParameter extracted successfully.
+2025-01-09 14:02:29,903 - INFO - Columns after separating endpoint: ['logid', 'userid', 'role', 'http_method', 'ip_address', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'baseendpoint', 'endpointparameter']
+2025-01-09 14:02:29,918 - INFO - IP Address features extracted and encoded successfully.
+2025-01-09 14:02:29,918 - INFO - Columns after extracting IP features: ['logid', 'userid', 'role', 'http_method', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'baseendpoint', 'endpointparameter', 'is_authorized_subnet']
+2025-01-09 14:02:29,923 - INFO - Additional feature engineering completed.
+2025-01-09 14:02:29,923 - INFO - Columns after feature engineering: ['logid', 'userid', 'role', 'http_method', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'baseendpoint', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints']
+2025-01-09 14:02:29,943 - INFO - Categorical features encoded successfully.
+2025-01-09 14:02:29,943 - INFO - Columns after encoding categorical features: ['logid', 'userid', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:29,955 - INFO - Numerical features scaled successfully.
+2025-01-09 14:02:29,955 - INFO - Columns after scaling features: ['logid', 'userid', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:29,956 - INFO - Features and labels separated successfully.
+2025-01-09 14:02:29,956 - INFO - Columns after preparing features and labels: ['logid', 'userid', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:29,970 - INFO - Data types optimized successfully.
+2025-01-09 14:02:29,970 - INFO - Columns after optimizing data types: ['logid', 'userid', 'anomalous', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:29,970 - INFO - Data preprocessing completed successfully.
+2025-01-09 14:02:29,971 - INFO - Preprocessor saved successfully at 'data/preprocessor.joblib'.
+2025-01-09 14:02:30,084 - INFO - DataPreprocessor initialized.
+2025-01-09 14:02:30,085 - INFO - Preprocessor loaded successfully from 'data/preprocessor.joblib'.
+2025-01-09 14:02:30,105 - INFO - Data loaded successfully with shape: (7000, 7)
+2025-01-09 14:02:30,105 - INFO - Raw columns: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address']
+2025-01-09 14:02:30,105 - INFO - Columns after loading data: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address']
+2025-01-09 14:02:30,122 - INFO - Missing values handled successfully.
+2025-01-09 14:02:30,122 - INFO - Columns after handling missing values: ['logid', 'userid', 'role', 'timestamp', 'http_method', 'endpoint', 'ip_address']
+2025-01-09 14:02:30,137 - INFO - Timestamp converted and new time-based features extracted.
+2025-01-09 14:02:30,137 - INFO - Columns after converting timestamp: ['logid', 'userid', 'role', 'http_method', 'endpoint', 'ip_address', 'hour', 'dayofweek', 'month', 'day', 'weekofyear']
+2025-01-09 14:02:30,147 - INFO - BaseEndpoint and EndpointParameter extracted successfully.
+2025-01-09 14:02:30,147 - INFO - Columns after separating endpoint: ['logid', 'userid', 'role', 'http_method', 'ip_address', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'baseendpoint', 'endpointparameter']
+2025-01-09 14:02:30,159 - INFO - IP Address features extracted and encoded successfully.
+2025-01-09 14:02:30,159 - INFO - Columns after extracting IP features: ['logid', 'userid', 'role', 'http_method', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'baseendpoint', 'endpointparameter', 'is_authorized_subnet']
+2025-01-09 14:02:30,165 - INFO - Additional feature engineering completed.
+2025-01-09 14:02:30,166 - INFO - Columns after feature engineering: ['logid', 'userid', 'role', 'http_method', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'baseendpoint', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints']
+2025-01-09 14:02:30,186 - INFO - Categorical features encoded successfully.
+2025-01-09 14:02:30,186 - INFO - Columns after encoding categorical features: ['logid', 'userid', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:30,193 - INFO - Numerical features scaled successfully.
+2025-01-09 14:02:30,193 - INFO - Columns after scaling features: ['logid', 'userid', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:30,195 - INFO - Features and labels separated successfully.
+2025-01-09 14:02:30,195 - INFO - Columns after preparing features and labels: ['logid', 'userid', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:30,211 - INFO - Data types optimized successfully.
+2025-01-09 14:02:30,211 - INFO - Columns after optimizing data types: ['logid', 'userid', 'hour', 'dayofweek', 'month', 'day', 'weekofyear', 'endpointparameter', 'is_authorized_subnet', 'accesscount', 'uniqueendpoints', 'role_Doctor', 'role_Nurse', 'role_Staff', 'http_method_GET', 'http_method_HEAD', 'http_method_OPTIONS', 'http_method_PATCH', 'http_method_POST', 'http_method_PUT', 'baseendpoint_/admin/settings', 'baseendpoint_/billing/invoices', 'baseendpoint_/inventory/items', 'baseendpoint_/patient/records']
+2025-01-09 14:02:30,212 - INFO - Data preprocessing completed successfully.

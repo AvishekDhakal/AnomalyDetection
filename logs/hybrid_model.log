@@ -1,0 +1,53 @@
+2025-01-10 10:09:17,384 - INFO - Logging is set up.
+2025-01-10 10:09:17,415 - INFO - Data loaded successfully with shape: (7000, 44)
+2025-01-10 10:09:17,416 - INFO - Prepared feature matrix X and target vector y.
+2025-01-10 10:09:17,422 - INFO - Data split into train and test sets with test size 0.2.
+2025-01-10 10:09:17,482 - INFO - Applied SMOTE to balance the training data.
+2025-01-10 10:09:17,849 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-10 10:09:17,857 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-10 10:09:17,974 - INFO - SMOTE distribution plot saved at 'models/hybrid_model_smote_distribution.png'.
+2025-01-10 10:09:19,329 - INFO - Random Forest model trained successfully.
+2025-01-10 10:09:24,861 - INFO - Gradient Boosting model trained successfully.
+2025-01-10 10:09:31,586 - INFO - Ensemble model trained successfully.
+2025-01-10 10:09:31,757 - INFO - Ensemble Accuracy: 0.9557
+2025-01-10 10:09:31,758 - INFO - Ensemble Precision: 0.9774
+2025-01-10 10:09:31,758 - INFO - Ensemble Recall: 0.8650
+2025-01-10 10:09:31,758 - INFO - Ensemble F1-Score: 0.9178
+2025-01-10 10:09:31,758 - INFO - Ensemble ROC-AUC: 0.9828
+2025-01-10 10:09:31,758 - INFO - Ensemble Confusion Matrix:
+[[992   8]
+ [ 54 346]]
+2025-01-10 10:09:31,758 - INFO - Ensemble Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.95      0.99      0.97      1000
+           1       0.98      0.86      0.92       400
+
+    accuracy                           0.96      1400
+   macro avg       0.96      0.93      0.94      1400
+weighted avg       0.96      0.96      0.95      1400
+
+2025-01-10 10:09:31,956 - INFO - Ensemble confusion matrix plot saved at 'models/hybrid_ensemble_confusion_matrix.png'.
+2025-01-10 10:09:32,137 - INFO - Ensemble Precision-Recall curve plot saved at 'models/hybrid_ensemble_precision_recall_curve.png'.
+2025-01-10 10:09:32,215 - INFO - Ensemble Optimal threshold determined: 0.2592
+2025-01-10 10:09:32,234 - INFO - Ensemble Adjusted Threshold Accuracy: 0.9164
+2025-01-10 10:09:32,235 - INFO - Ensemble Adjusted Threshold Precision: 0.8238
+2025-01-10 10:09:32,235 - INFO - Ensemble Adjusted Threshold Recall: 0.9000
+2025-01-10 10:09:32,235 - INFO - Ensemble Adjusted Threshold F1-Score: 0.8602
+2025-01-10 10:09:32,235 - INFO - Ensemble Adjusted Threshold ROC-AUC: 0.9828
+2025-01-10 10:09:32,235 - INFO - Ensemble Adjusted Threshold Confusion Matrix:
+[[923  77]
+ [ 40 360]]
+2025-01-10 10:09:32,235 - INFO - Ensemble Adjusted Threshold Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.96      0.92      0.94      1000
+           1       0.82      0.90      0.86       400
+
+    accuracy                           0.92      1400
+   macro avg       0.89      0.91      0.90      1400
+weighted avg       0.92      0.92      0.92      1400
+
+2025-01-10 10:09:32,241 - INFO - Ensemble Adjusted threshold predictions saved successfully at 'data/hybrid_model_predictions_adjusted_threshold.csv'.
+2025-01-10 10:09:32,470 - INFO - Model saved successfully at 'models/hybrid_model.joblib'.
+2025-01-10 10:09:32,548 - INFO - Initial predictions saved successfully at 'data/hybrid_model_predictions.csv'.
