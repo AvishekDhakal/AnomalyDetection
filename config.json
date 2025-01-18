@@ -1,0 +1,164 @@
+{
+    "ROLE_WEIGHTS_NORMAL": {
+      "Doctor": 0.15,
+      "Nurse": 0.40,
+      "Staff": 0.35,
+      "Admin": 0.10
+    },
+    "NORMAL_METHODS": {
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
+      "weights": [0.65, 0.20, 0.05, 0.02, 0.03, 0.03, 0.02]
+    },
+    "HTTP_RESPONSE_CODES": {
+      "normal": {
+        "codes": [200, 201, 302, 304],
+        "weights": [0.70, 0.15, 0.10, 0.05]
+      },
+      "anomalous": {
+        "codes": [200, 403, 404, 500],
+        "weights": [0.2, 0.4, 0.2, 0.2]
+      }
+    },
+    "ANOMALY_SCENARIOS": {
+      "Doctor": {
+        "admin_unauthorized": 0.10,
+        "patient_records_put_del": 0.25,
+        "inventory_put_del": 0.20,
+        "billing_invoices_put_del": 0.15,
+        "data_exfiltration": 0.15,
+        "privilege_escalation": 0.10,
+        "multiple_failed_attempts": 0.05
+      },
+      "Nurse": {
+        "admin_unauthorized": 0.10,
+        "patient_records_put_del": 0.25,
+        "inventory_put_del": 0.20,
+        "billing_invoices_put_del": 0.15,
+        "data_exfiltration": 0.15,
+        "privilege_escalation": 0.10,
+        "multiple_failed_attempts": 0.05
+      },
+      "Staff": {
+        "admin_unauthorized": 0.05,
+        "inventory_put_del": 0.30,
+        "billing_invoices_put_del": 0.30,
+        "multiple_failed_attempts": 0.15,
+        "unusual_access_pattern": 0.10,
+        "data_exfiltration": 0.05,
+        "privilege_escalation": 0.05
+      },
+      "Admin": {
+        "admin_suspicious": 0.25,
+        "patient_records_put_del": 0.25,
+        "inventory_put_del": 0.20,
+        "data_exfiltration": 0.10,
+        "privilege_escalation": 0.10,
+        "multiple_failed_attempts": 0.10
+      }
+    },
+    "ENDPOINTS": {
+      "Doctor": [
+        "/patient/records",
+        "/patient/labs",
+        "/patient/appointments",
+        "/billing/invoices",
+        "/pharmacy/orders",
+        "/pharmacy/refills",
+        "/patient/appointments/confirm",
+        "/patient/appointments/cancel",
+        "/patient/insurance",
+        "/claims/status",
+        "/lab/results",
+        "/lab/tests"
+      ],
+      "Nurse": [
+        "/patient/records",
+        "/patient/labs",
+        "/patient/appointments",
+        "/billing/invoices",
+        "/pharmacy/orders",
+        "/pharmacy/refills",
+        "/patient/appointments/confirm",
+        "/patient/appointments/cancel",
+        "/patient/insurance",
+        "/claims/status",
+        "/lab/results",
+        "/lab/tests"
+      ],
+      "Staff": [
+        "/inventory/items",
+        "/billing/invoices",
+        "/patient/scheduling",
+        "/pharmacy/orders",
+        "/pharmacy/refills",
+        "/claims/status",
+        "/lab/results",
+        "/lab/tests"
+      ],
+      "Admin": [
+        "/admin/settings",
+        "/admin/credentials",
+        "/admin/logs",
+        "/admin/users"
+      ]
+    },
+    "USER_AGENTS": {
+      "common": [
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Mozilla/5.0 (X11; Linux x86_64)",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "curl/7.68.0",
+        "Python-urllib/3.9",
+        "Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
+      ],
+      "admin_extra": [
+        "PostmanRuntime/7.26.8",
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)"
+      ]
+    },
+    "ANOMALOUS_ENDPOINTS": {
+      "admin_unauthorized": [
+        ["/admin/settings", "GET"],
+        ["/admin/settings", "PUT"],
+        ["/admin/credentials", "GET"],
+        ["/admin/credentials", "DELETE"]
+      ],
+      "admin_suspicious": [
+        ["/admin/settings", "DELETE"],
+        ["/admin/settings", "PUT"],
+        ["/admin/credentials", "PUT"],
+        ["/admin/credentials", "DELETE"]
+      ],
+      "patient_records_put_del": [
+        ["/patient/records", "PUT"],
+        ["/patient/records", "DELETE"]
+      ],
+      "inventory_put_del": [
+        ["/inventory/items", "PUT"],
+        ["/inventory/items", "DELETE"]
+      ],
+      "billing_invoices_put_del": [
+        ["/billing/invoices", "PUT"],
+        ["/billing/invoices", "DELETE"]
+      ],
+      "data_exfiltration": [
+        ["/patient/records", "GET"],
+        ["/billing/invoices", "GET"],
+        ["/inventory/items", "GET"]
+      ],
+      "privilege_escalation": [
+        ["/admin/settings", "POST"],
+        ["/admin/credentials", "PUT"]
+      ],
+      "multiple_failed_attempts": [
+        ["/login/attempts", "DELETE"]
+      ],
+      "unusual_access_pattern": [
+        ["/billing/invoices", "PUT"],
+        ["/patient/records", "DELETE"],
+        ["/inventory/items", "PATCH"]
+      ]
+    }
+  }
+  

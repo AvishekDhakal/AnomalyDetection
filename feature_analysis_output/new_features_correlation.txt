@@ -1,0 +1,2 @@
+freq_role_endpoint: -0.2276
+logs_last_1h_global: -0.0971
