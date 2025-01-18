@@ -1,0 +1,45 @@
+LogID,UserID,Role,Timestamp,HTTP_Method,Endpoint,IP_Address,User_Agent,HTTP_Response,Anomalous,HTTP_Consistency_Flag
+67b3ee05-d91a-48e9-a784-b01cdc3def57,50,Staff,2024-12-22 10:23:05,DELETE,/inventory/items?item_id=4866,10.0.0.187,Python-urllib/3.9,200,0,1
+be8b2618-bf5a-4a56-b7f6-e95de939455d,64,Admin,2025-01-05 19:43:06,PUT,/patient/records?patient_id=1263&export=true&limit=1000,10.0.0.78,Mozilla/5.0 (X11; Linux x86_64),404,1,1
+68afc53c-eb11-4987-92d0-0a248e66e699,44,Nurse,2024-11-06 14:25:56,DELETE,/billing/invoices?invoice_id=2810,10.0.0.226,Python-urllib/3.9,200,0,1
+958646fa-6408-4b66-bf74-f4e22fcc8eb8,63,Admin,2024-11-29 09:02:38,DELETE,/admin/credentials?admin_id=63,10.0.0.203,curl/7.68.0,200,0,1
+a1017423-e44e-4cba-8d8c-73f377e082be,5,Doctor,2024-12-04 02:01:08,PUT,/patient/records?patient_id=1857&export=true&limit=1000,10.0.0.195,curl/7.68.0,404,1,1
+5ac16c55-52ec-4c15-98cc-0fd93fe55eb1,56,Staff,2024-11-30 14:03:15,DELETE,/inventory/items?item_id=4253,10.0.0.177,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,0,1
+70419b5d-8ce3-4ab2-b17f-7237a9500178,68,Admin,2024-10-31 04:22:05,DELETE,/admin/settings?admin_id=68,10.0.0.100,Mozilla/5.0 (X11; Linux x86_64),200,0,1
+bd893183-ca46-46b4-9e15-562a4520d223,53,Staff,2024-10-20 23:49:32,DELETE,/inventory/items?item_id=4430,10.0.0.161,Python-urllib/3.9,200,0,1
+26566637-985e-40af-a55f-8620076ecfe0,21,Nurse,2024-12-07 05:18:01,DELETE,/patient/records?patient_id=1823,10.0.0.89,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,0,1
+f68e3e1a-2d19-4e75-9c06-0dc9713e5a17,8,Doctor,2024-11-15 11:45:39,DELETE,/inventory/items?item_id=4407,10.0.0.49,curl/7.68.0,200,0,1
+0a3da697-f949-4dc4-86d4-df0e3435dce8,8,Doctor,2024-12-11 08:20:52,DELETE,/inventory/items?item_id=4556,10.0.0.244,Mozilla/5.0 (X11; Linux x86_64),200,0,1
+4773454c-78d0-48e6-ba9c-a38add701f05,41,Nurse,2024-10-25 01:52:26,DELETE,/billing/invoices?invoice_id=2672,10.0.0.202,Python-urllib/3.9,200,0,1
+ac9ce3b1-81d2-4df4-957e-5d3880f08447,18,Doctor,2024-11-19 06:39:31,DELETE,/patient/records?patient_id=1590,10.0.0.182,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,0,1
+31dc7b49-6117-48b8-96cc-98e7cb14e701,46,Staff,2024-11-12 16:33:44,DELETE,/inventory/items?item_id=4725,10.0.0.88,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,0,1
+33b50e69-5138-4320-ada1-2748f6d58169,42,Nurse,2024-10-31 01:46:12,DELETE,/inventory/items?item_id=4837,10.0.0.12,Python-urllib/3.9,200,0,1
+5fd5c9b0-7b52-4e96-9945-d23bde63627e,58,Staff,2024-12-09 09:56:32,DELETE,/billing/invoices?invoice_id=2145,10.0.0.90,curl/7.68.0,200,0,1
+a4a24155-9680-4cfe-94fb-062a25c28cc3,32,Nurse,2024-11-21 04:54:21,DELETE,/patient/records?patient_id=1360,10.0.0.163,curl/7.68.0,200,0,1
+32744d2e-3de0-42c7-bc5d-1cbcf2356fc2,20,Doctor,2024-11-02 09:41:46,DELETE,/patient/records?patient_id=1104,10.0.0.161,Python-urllib/3.9,200,0,1
+b08703a7-6594-4558-bafb-51c0af528a53,63,Admin,2024-10-28 12:44:26,DELETE,/admin/settings?admin_id=63,10.0.0.31,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,0,1
+9ac07310-e154-4f16-8d85-f0d0fd2ba96e,54,Staff,2024-10-26 09:58:06,DELETE,/inventory/items?item_id=4612,10.0.0.125,Python-urllib/3.9,200,0,1
+8660622f-618d-442a-9618-77664c982a9c,4,Doctor,2024-10-31 09:45:29,DELETE,/patient/records?patient_id=1298,10.0.0.232,Mozilla/5.0 (X11; Linux x86_64),200,0,1
+567fe424-9388-4349-8e63-a4857b034f3c,68,Admin,2025-01-09 14:43:41,DELETE,/admin/credentials?admin_id=68,10.0.0.51,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,0,1
+f2a86c9e-2690-4ce8-8e35-c999b30e8f99,1,Doctor,2024-12-10 02:57:21,DELETE,/patient/records?patient_id=1647,10.0.0.38,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,0,1
+053aec21-d0c8-4683-b212-f2dc07997988,43,Nurse,2024-11-22 16:14:07,DELETE,/inventory/items?item_id=4039,10.0.0.127,Python-urllib/3.9,200,0,1
+c7a361fc-c4fe-4e8d-89a9-338011c40739,47,Staff,2024-12-15 18:43:24,DELETE,/billing/invoices?invoice_id=2272,10.0.0.236,curl/7.68.0,200,0,1
+6d684306-35ec-452a-9e44-2eb181756e08,64,Admin,2025-01-02 22:43:27,DELETE,/admin/settings?admin_id=64,10.0.0.145,Python-urllib/3.9,200,0,1
+f18e9390-1a12-43ca-a60e-fc2f96469a0f,31,Nurse,2024-12-15 06:19:47,DELETE,/inventory/items?item_id=4247,10.0.0.21,curl/7.68.0,200,0,1
+ab88e087-266d-4320-b156-1292b6deb4c3,69,Admin,2025-01-14 04:52:19,DELETE,/admin/credentials?admin_id=69,10.0.0.216,Python-urllib/3.9,200,0,1
+090b1127-f74e-407a-b666-02a2ac03a608,54,Staff,2024-12-11 01:25:55,DELETE,/inventory/items?item_id=4969&export=true&limit=300,10.0.0.160,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,1,1
+9b21bd39-e59d-4ada-8018-dafbe4a7b8da,3,Doctor,2024-11-14 23:58:54,DELETE,/billing/invoices?invoice_id=2597,10.0.0.156,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,0,1
+f67fa657-d5d3-4f9a-be28-fdaea0861859,47,Staff,2024-12-10 10:45:58,DELETE,/inventory/items?item_id=4930,10.0.0.185,curl/7.68.0,200,0,1
+4bfdf747-6881-43f2-96dc-13708987fde5,70,Admin,2025-01-14 22:34:27,DELETE,/admin/credentials?admin_id=70,10.0.0.63,curl/7.68.0,200,0,1
+dcc75067-feeb-4731-b424-8f23053eca61,69,Admin,2024-10-26 18:30:08,DELETE,/admin/credentials?admin_id=69,10.0.0.41,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,0,1
+1223951c-4f94-4a5f-ae87-6b144392c6d4,62,Admin,2025-01-10 12:46:53,DELETE,/admin/credentials?admin_id=62,10.0.0.252,Mozilla/5.0 (X11; Linux x86_64),200,0,1
+42dbb787-3c89-4d9b-aac8-f41d400196c6,70,Admin,2024-10-22 10:11:27,DELETE,/admin/settings?admin_id=70,10.0.0.134,Python-urllib/3.9,200,0,1
+806c29fb-4780-45e3-839f-6830e4a68aa3,69,Admin,2024-10-29 21:29:22,DELETE,/admin/settings?admin_id=69,10.0.0.42,Python-urllib/3.9,200,0,1
+767f50be-d96b-4a50-b5c5-5c2189ba6afc,20,Doctor,2024-12-30 08:28:35,DELETE,/inventory/items?item_id=4493,10.0.0.234,Python-urllib/3.9,200,0,1
+5d4a5666-0208-4396-81fb-62b60c74b938,64,Admin,2024-10-24 18:32:41,DELETE,/admin/credentials?admin_id=64,10.0.0.223,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,0,1
+265f6618-eddb-41cd-9d74-1b366514afe8,55,Staff,2025-01-13 07:02:38,DELETE,/billing/invoices?invoice_id=2686,10.0.0.50,Python-urllib/3.9,200,0,1
+c0ae7d71-67e3-46da-85d5-2c8b7d15a77a,55,Staff,2024-11-22 22:02:14,DELETE,/inventory/items?item_id=4618,10.0.0.186,Mozilla/5.0 (Windows NT 10.0; Win64; x64),200,0,1
+b63d1ff8-8568-4e4c-b55a-b90928b09d40,68,Admin,2024-10-28 11:20:38,DELETE,/patient/records?patient_id=1337&export=true&limit=1000,10.0.0.2,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,1,1
+440a1dc0-4ac4-434f-98a2-8561a95e404f,4,Doctor,2024-12-23 15:39:52,PUT,/patient/records?patient_id=1198&export=true&limit=1000,10.0.0.91,Mozilla/5.0 (Windows NT 10.0; Win64; x64),404,1,1
+2e4a4605-1d71-4842-9338-6deacaff5a3c,14,Doctor,2024-11-14 12:44:04,DELETE,/inventory/items?item_id=4114,10.0.0.232,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7),200,0,1
+70cb00f9-fbb5-44c6-ba72-281c4193e9af,62,Admin,2024-11-08 09:13:30,DELETE,/admin/credentials?admin_id=62,10.0.0.15,curl/7.68.0,200,0,1

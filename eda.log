@@ -1,0 +1,63 @@
+2025-01-18 20:05:55,719:INFO:Data loaded successfully.
+2025-01-18 20:05:55,719:INFO:Initial inspection for Master Logs.
+2025-01-18 20:05:55,940:INFO:Initial inspection for Inference Logs.
+2025-01-18 20:05:56,169:INFO:Starting univariate analysis.
+2025-01-18 20:05:56,967:INFO:Univariate bar chart for Role saved.
+2025-01-18 20:05:57,414:INFO:Univariate bar chart for HTTP_Method saved.
+2025-01-18 20:05:57,543:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:05:57,626:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:05:57,897:INFO:Univariate bar chart for HTTP_Response saved.
+2025-01-18 20:05:58,068:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:05:58,146:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:05:58,349:INFO:Univariate bar chart for Anomalous saved.
+2025-01-18 20:05:58,531:INFO:Univariate pie chart for User_Agent saved.
+2025-01-18 20:05:59,296:INFO:Univariate histogram for UserID saved.
+2025-01-18 20:05:59,358:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:05:59,363:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:05:59,714:INFO:Univariate log frequency per UserID bar chart saved.
+2025-01-18 20:05:59,714:INFO:Starting bivariate analysis.
+2025-01-18 20:05:59,912:INFO:Bivariate stacked bar chart for Anomalous vs Role saved.
+2025-01-18 20:06:00,134:INFO:Bivariate stacked bar chart for HTTP_Method vs Role saved.
+2025-01-18 20:06:00,257:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:06:00,294:INFO:Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
+2025-01-18 20:06:00,402:INFO:Bivariate box plot for Timestamp vs Anomalous saved.
+2025-01-18 20:06:00,828:INFO:Bivariate correlation heatmap saved.
+2025-01-18 20:06:00,828:INFO:Starting time-series analysis.
+2025-01-18 20:06:01,017:INFO:Time-series line chart for Logs per Day saved.
+2025-01-18 20:06:01,217:INFO:Time-series line chart for Anomalies per Day saved.
+2025-01-18 20:06:01,774:INFO:Seasonal decomposition plot saved.
+2025-01-18 20:06:01,774:INFO:Starting geographical analysis.
+2025-01-18 20:06:02,559:INFO:Geographical IP fourth octet distribution histogram saved.
+2025-01-18 20:06:02,559:INFO:Starting endpoint analysis.
+2025-01-18 20:06:02,847:INFO:Endpoint top 20 accessed bar chart saved.
+2025-01-18 20:12:49,344:INFO:Endpoint accessed during Anomalous vs Normal logs countplot saved.
+2025-01-18 20:12:49,344:INFO:Generating statistical summaries.
+2025-01-18 20:12:49,349:INFO:Descriptive statistics for numerical features saved.
+2025-01-18 20:12:49,352:INFO:Descriptive statistics for Timestamp saved.
+2025-01-18 20:12:49,356:INFO:Frequency counts for Role saved.
+2025-01-18 20:12:49,361:INFO:Frequency counts for HTTP_Method saved.
+2025-01-18 20:12:49,400:INFO:Frequency counts for Endpoint saved.
+2025-01-18 20:12:49,405:INFO:Frequency counts for User_Agent saved.
+2025-01-18 20:12:49,407:INFO:Frequency counts for HTTP_Response saved.
+2025-01-18 20:12:49,411:INFO:Percentage distribution for Role saved.
+2025-01-18 20:12:49,415:INFO:Percentage distribution for HTTP_Method saved.
+2025-01-18 20:12:49,489:INFO:Percentage distribution for Endpoint saved.
+2025-01-18 20:12:49,495:INFO:Percentage distribution for User_Agent saved.
+2025-01-18 20:12:49,496:INFO:Percentage distribution for HTTP_Response saved.
+2025-01-18 20:12:49,498:INFO:Anomaly statistics saved.
+2025-01-18 20:12:49,506:INFO:Anomaly distribution across Role saved.
+2025-01-18 20:12:49,516:INFO:Anomaly distribution across HTTP_Method saved.
+2025-01-18 20:12:49,846:INFO:Anomaly distribution across Endpoint saved.
+2025-01-18 20:12:49,846:INFO:Starting bias and outlier detection.
+2025-01-18 20:12:49,847:INFO:Class imbalance ratio saved.
+2025-01-18 20:12:49,851:INFO:Role-based distribution saved.
+2025-01-18 20:12:49,854:INFO:Logs per hour distribution saved.
+2025-01-18 20:12:49,871:INFO:Outliers based on UserID Z-score saved.
+2025-01-18 20:12:50,094:INFO:Box plot for UserID outlier detection saved.
+2025-01-18 20:12:50,174:INFO:Rare endpoint and HTTP method combinations saved.
+2025-01-18 20:12:50,175:INFO:Starting data quality checks.
+2025-01-18 20:12:50,199:INFO:Missing values per column saved.
+2025-01-18 20:12:50,207:INFO:Duplicate logs based on LogID saved.
+2025-01-18 20:12:50,238:INFO:Inconsistent HTTP_Method and HTTP_Response combinations saved.
+2025-01-18 20:12:51,596:INFO:Missing values heatmap saved.
+2025-01-18 20:12:51,596:INFO:EDA completed successfully.

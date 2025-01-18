@@ -1,9 +1,0 @@
-2025-01-09 20:25:26,774 - INFO - Logging is set up.
-2025-01-09 20:25:26,807 - INFO - Data loaded successfully with shape: (7000, 44)
-2025-01-09 20:25:26,808 - INFO - Prepared feature matrix X and target vector y.
-2025-01-09 20:25:26,813 - INFO - Data split into train and test sets with test size 0.2.
-2025-01-09 20:25:26,871 - INFO - Applied SMOTE to balance the training data.
-2025-01-09 20:25:27,240 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-2025-01-09 20:25:27,248 - INFO - Using categorical units to plot a list of strings that are all parsable as floats or dates. If these strings should be plotted as numbers, cast to the appropriate data type before plotting.
-2025-01-09 20:25:27,343 - INFO - SMOTE distribution plot saved at 'models/simple_xgboost_smote_distribution.png'.
-2025-01-09 20:25:27,345 - ERROR - Error in hyperparameter tuning for XGBoost: 'super' object has no attribute '__sklearn_tags__'

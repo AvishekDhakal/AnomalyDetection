@@ -1,0 +1,1 @@
+LogID,UserID,Role,Timestamp,HTTP_Method,Endpoint,IP_Address,User_Agent,HTTP_Response,Anomalous,Hour,IP_First_Octet,IP_Second_Octet,IP_Third_Octet,IP_Fourth_Octet,Date,IP_Octets,IP_Combined,UserID_Zscore
