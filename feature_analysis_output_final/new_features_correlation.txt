@@ -1,6 +1,0 @@
-Is_External_After_Hours: 0.3542
-logs_last_1h_global: -0.1380
-Is_Weekend_Admin: 0.0451
-Is_MidNight: -0.0351
-freq_role_endpoint: -0.0333
-Unusual_Global_Spike: -0.0184
