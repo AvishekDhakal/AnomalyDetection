@@ -1,0 +1,297 @@
+{
+  "ROLE_WEIGHTS_NORMAL": {
+    "Doctor": 0.15,
+    "Nurse": 0.40,
+    "Staff": 0.35,
+    "Admin": 0.10
+  },
+  "NORMAL_METHODS": {
+    "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
+    "weights": [0.65, 0.20, 0.05, 0.02, 0.03, 0.03, 0.02]
+  },
+  "HTTP_RESPONSE_CODES": {
+    "normal": {
+      "codes": [200, 201, 302, 304, 403, 500],
+      "weights": [0.65, 0.10, 0.10, 0.05, 0.05, 0.05]
+    },
+    "anomalous": {
+      "codes": [200, 403, 404, 500],
+      "weights": [0.30, 0.30, 0.25, 0.15]
+    }
+  },
+  "IP_ADDRESS_GENERATION": {
+    "anomalous_external_ip_probability": 0.1,
+    "normal_external_ip_probability": 0.02,
+    "ip_correlation_threshold": 0.3
+  },
+  "ANOMALY_SCENARIOS": {
+    "Doctor": {
+      "high_frequency_put_patient_records": 0.10,
+      "delete_patient_records": 0.05,
+      "delete_billing_invoices": 0.05,
+      "patient_records_put_del": 0.15,
+      "unusual_ip_access": 0.10,
+      "data_exfiltration": 0.10,
+      "external_ip_only": 0.15,
+      "sql_injection": 0.03,
+      "xss": 0.02
+    },
+    "Nurse": {
+      "high_frequency_put_patient_records": 0.10,
+      "delete_patient_records": 0.05,
+      "delete_billing_invoices": 0.05,
+      "patient_records_put_del": 0.15,
+      "unusual_ip_access": 0.10,
+      "data_exfiltration": 0.10,
+      "external_ip_only": 0.15,
+      "sql_injection": 0.03,
+      "xss": 0.02
+    },
+    "Staff": {
+      "rapid_inventory_changes": 0.15,
+      "access_restricted_endpoints": 0.05,
+      "inventory_put_del": 0.25,
+      "billing_invoices_put_del": 0.30,
+      "data_exfiltration": 0.05,
+      "external_ip_only": 0.05,
+      "multiple_put_del_same_item": 0.10,
+      "multiple_delete_same_item": 0.10,
+      "access_patient_invoices": 0.10,
+      "sql_injection": 0.02,
+      "xss": 0.02
+    },
+    "Admin": {
+      "delete_login_attempts": 0.10,
+      "delete_admin_logs": 0.10,
+      "access_patient_records": 0.10,
+      "admin_suspicious": 0.20,
+      "data_exfiltration": 0.10,
+      "privilege_escalation": 0.10,
+      "multiple_failed_attempts": 0.10,
+      "sql_injection": 0.05,
+      "xss": 0.05,
+      "external_ip_only": 0.05,
+      "unauthorized_endpoint_access": 0.10
+    }
+  },
+  "ENDPOINTS": {
+    "Doctor": [
+      "/patient/records",
+      "/patient/labs",
+      "/patient/appointments",
+      "/billing/invoices",
+      "/pharmacy/orders",
+      "/pharmacy/refills",
+      "/patient/appointments/confirm",
+      "/patient/appointments/cancel",
+      "/patient/insurance",
+      "/claims/status",
+      "/lab/results",
+      "/lab/tests"
+    ],
+    "Nurse": [
+      "/patient/records",
+      "/patient/labs",
+      "/patient/appointments",
+      "/billing/invoices",
+      "/pharmacy/orders",
+      "/pharmacy/refills",
+      "/patient/appointments/confirm",
+      "/patient/appointments/cancel",
+      "/patient/insurance",
+      "/claims/status",
+      "/lab/results",
+      "/lab/tests"
+    ],
+    "Staff": [
+      "/inventory/items",
+      "/billing/invoices",
+      "/patient/scheduling",
+      "/pharmacy/orders",
+      "/pharmacy/refills",
+      "/claims/status",
+      "/lab/results",
+      "/lab/tests",
+      "/patient/invoices"
+    ],
+    "Admin": [
+      "/admin/settings",
+      "/admin/credentials",
+      "/admin/logs",
+      "/admin/users",
+      "/patient/records"
+    ]
+  },
+  "ANOMALOUS_ENDPOINTS": {
+    "high_frequency_put_patient_records": [
+      ["/patient/records", "PUT"]
+    ],
+    "delete_patient_records": [
+      ["/patient/records", "DELETE"]
+    ],
+    "delete_billing_invoices": [
+      ["/billing/invoices", "DELETE"]
+    ],
+    "patient_records_put_del": [
+      ["/patient/records", "PUT"],
+      ["/patient/records", "DELETE"]
+    ],
+    "unusual_ip_access": [
+      ["/patient/records", "GET"],
+      ["/lab/results", "GET"],
+      ["/billing/invoices", "GET"]
+    ],
+    "data_exfiltration": [
+      ["/patient/records", "GET"],
+      ["/billing/invoices", "GET"],
+      ["/inventory/items", "GET"]
+    ],
+    "external_ip_only": [
+      ["/patient/records", "GET"],
+      ["/billing/invoices", "GET"],
+      ["/inventory/items", "GET"],
+      ["/patient/appointments", "GET"],
+      ["/patient/invoices", "GET"]
+    ],
+    "multiple_failed_attempts": [
+      ["/login/attempts", "DELETE"]
+    ],
+    "sql_injection": [
+      ["/admin/settings", "POST"],
+      ["/patient/records", "GET"]
+    ],
+    "xss": [
+      ["/admin/users", "PUT"]
+    ],
+    "rapid_inventory_changes": [
+      ["/inventory/items", "PUT"],
+      ["/inventory/items", "DELETE"],
+      ["/inventory/items", "PUT"]
+    ],
+    "access_restricted_endpoints": [
+      ["/lab/results", "GET"],
+      ["/lab/tests", "GET"],
+      ["/lab/tests", "DELETE"],
+      ["/pharmacy/orders", "DELETE"]
+    ],
+    "access_patient_invoices": [
+      ["/patient/invoices", "GET"],
+      ["/patient/invoices", "PUT"]
+    ],
+    "delete_login_attempts": [
+      ["/login/attempts", "DELETE"]
+    ],
+    "delete_admin_logs": [
+      ["/admin/logs", "DELETE"]
+    ],
+    "access_patient_records": [
+      ["/patient/records", "GET"],
+      ["/patient/records", "PUT"],
+      ["/patient/records", "DELETE"]
+    ],
+    "unauthorized_endpoint_access": [
+      ["/patient/records", "GET"],
+      ["/patient/records", "DELETE"],
+      ["/admin/users", "DELETE"]
+    ],
+    "admin_suspicious": [
+      ["/admin/settings", "PATCH"],
+      ["/admin/credentials", "PUT"],
+      ["/admin/credentials", "GET"],
+      ["/admin/logs", "GET"]
+    ],
+    "privilege_escalation": [
+      ["/admin/users", "POST"],
+      ["/admin/credentials", "POST"]
+    ]
+  },
+  "PARAMETERS": {
+    "/patient/records": {
+      "id_range": [1000, 9999],
+      "export": true,
+      "limit": 1000
+    },
+    "/billing/invoices": {
+      "id_range": [2000, 9999],
+      "export": true,
+      "limit": 500
+    },
+    "/inventory/items": {
+      "id_range": [4000, 9999],
+      "export": true,
+      "limit": 300
+    },
+    "/admin/settings": {
+      "id_range": [61, 70]
+    },
+    "/admin/users": {
+      "id_range": [61, 70]
+    },
+    "/admin/credentials": {
+      "id_range": [61, 70]
+    },
+    "/login/attempts": {
+      "id_range": [1, 70],
+      "attempts": [3, 10],
+      "weights": [0.5, 0.5]
+    },
+    "/patient/appointments": {
+      "id_range": [500, 1000]
+    },
+    "/patient/labs": {
+      "id_range": [1000, 9999]
+    },
+    "/patient/insurance": {
+      "id_range": [1000, 9999]
+    },
+    "/claims/status": {
+      "id_range": [3000, 9999]
+    },
+    "/pharmacy/orders": {
+      "id_range": [5000, 9999]
+    },
+    "/pharmacy/refills": {
+      "id_range": [5000, 9999]
+    },
+    "/lab/results": {
+      "id_range": [7000, 9999]
+    },
+    "/lab/tests": {
+      "id_range": [7000, 9999]
+    },
+    "/patient/appointments/confirm": {},
+    "/patient/appointments/cancel": {},
+    "/patient/scheduling": {},
+    "/patient/invoices": {
+      "id_range": [8000, 9999],
+      "export": true,
+      "limit": 400
+    }
+  },
+  "ITEM_OPERATION_TRACKING": {
+    "max_puts_before_del": 2,
+    "max_dels_before_put": 2
+  },
+  "ROLES": {
+    "Doctor": [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+      11, 12, 13, 14, 15, 16, 17, 18, 19, 20
+    ],
+    "Nurse": [
+      21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+      31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+      41, 42, 43, 44, 45
+    ],
+    "Staff": [
+      46, 47, 48, 49, 50, 51, 52, 53, 54, 55,
+      56, 57, 58, 59, 60
+    ],
+    "Admin": [
+      61, 62, 63, 64, 65, 66, 67, 68, 69, 70
+    ]
+  },
+  "FEATURE_ENGINEERING": {
+    "unusual_hours": {"start": 21, "end": 6},
+    "endpoint_parse_depth": 3
+}
+}

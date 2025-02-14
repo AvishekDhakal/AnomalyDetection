@@ -1,0 +1,53 @@
+Exploratory Data Analysis Report
+===============================
+
+=== Summary Statistics ===
+              UserID      Endpoint  HTTP_Response          Hour     DayOfWeek  Is_After_Hours  Is_Internal_IP Role_Doctor Role_Nurse Role_Staff HTTP_Method_GET HTTP_Method_HEAD HTTP_Method_OPTIONS HTTP_Method_PATCH HTTP_Method_POST HTTP_Method_PUT     Anomalous
+count   12675.000000  12675.000000   12675.000000  12675.000000  12675.000000    12675.000000    12675.000000       12675      12675      12675           12675            12675               12675             12675            12675           12675  12675.000000
+unique           NaN           NaN            NaN           NaN           NaN             NaN             NaN           2          2          2               2                2                   2                 2                2               2           NaN
+top              NaN           NaN            NaN           NaN           NaN             NaN             NaN       False      False      False           False            False               False             False            False           False           NaN
+freq             NaN           NaN            NaN           NaN           NaN             NaN             NaN       10259       8798       8599            7794            12544               12497             12531            11074           10908           NaN
+mean       33.768915   2420.704615     305.534438     10.560158      3.023195        0.349428        0.966627         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      0.495464
+std        20.154176   2464.494969     109.239454      6.345050      2.006247        0.476808        0.179615         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      0.499999
+min         0.000000      0.000000     200.000000      0.000000      0.000000        0.000000        0.000000         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      0.000000
+25%        18.000000     62.000000     200.000000      6.000000      1.000000        0.000000        1.000000         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      0.000000
+50%        33.000000   1622.000000     302.000000     10.000000      3.000000        0.000000        1.000000         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      0.000000
+75%        51.000000   4517.500000     403.000000     15.000000      5.000000        1.000000        1.000000         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      1.000000
+max        69.000000   7584.000000     500.000000     23.000000      6.000000        1.000000        1.000000         NaN        NaN        NaN             NaN              NaN                 NaN               NaN              NaN             NaN      1.000000
+
+=== Correlation Matrix ===
+                  UserID  Endpoint  HTTP_Response      Hour  DayOfWeek  Is_After_Hours  Is_Internal_IP  Anomalous
+UserID          1.000000 -0.006376       0.009589 -0.020368  -0.012009        0.008904        0.019992   0.016256
+Endpoint       -0.006376  1.000000      -0.171339 -0.040293   0.003695        0.005050        0.013118  -0.185319
+HTTP_Response   0.009589 -0.171339       1.000000  0.101448  -0.009070        0.023568       -0.041680   0.608981
+Hour           -0.020368 -0.040293       0.101448  1.000000   0.003337       -0.267684       -0.013435   0.158206
+DayOfWeek      -0.012009  0.003695      -0.009070  0.003337   1.000000       -0.006824        0.008060  -0.001154
+Is_After_Hours  0.008904  0.005050       0.023568 -0.267684  -0.006824        1.000000       -0.006626   0.049509
+Is_Internal_IP  0.019992  0.013118      -0.041680 -0.013435   0.008060       -0.006626        1.000000  -0.075925
+Anomalous       0.016256 -0.185319       0.608981  0.158206  -0.001154        0.049509       -0.075925   1.000000
+
+=== Highly Correlated Feature Pairs (|correlation| > 0.8) ===
+No highly correlated feature pairs found.
+
+
+=== Additional Summary ===
+
+=== Missing Values ===
+UserID                 0
+Endpoint               0
+HTTP_Response          0
+Hour                   0
+DayOfWeek              0
+Is_After_Hours         0
+Is_Internal_IP         0
+Role_Doctor            0
+Role_Nurse             0
+Role_Staff             0
+HTTP_Method_GET        0
+HTTP_Method_HEAD       0
+HTTP_Method_OPTIONS    0
+HTTP_Method_PATCH      0
+HTTP_Method_POST       0
+HTTP_Method_PUT        0
+Anomalous              0
+
