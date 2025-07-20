@@ -60,3 +60,11 @@ Extend to network-level and database query anomaly detection.
 Implement federated learning for cross-institution collaboration without sharing raw data.
 
 Add analyst feedback loops to refine model and reduce false positives.
+
+## Live Dashboard
+
+![InsightMed Dashboard](gif/dashboard.gif)
+
+
+<sub>Snapshot of the real-time anomaly monitor</sub>
+
