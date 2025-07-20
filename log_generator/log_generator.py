@@ -152,59 +152,6 @@ class LogGenerator:
                     return True
         return False
 
-    # def generate_normal_log(self):
-    #     """
-    #     Generates a single normal log entry with 24-hour weighting
-    #     and weighted role selection.
-    #     """
-    #     # Weighted role selection
-    #     role_choices = list(self.config["ROLE_WEIGHTS_NORMAL"].keys())
-    #     weights_list = list(self.config["ROLE_WEIGHTS_NORMAL"].values())
-    #     role = random.choices(role_choices, weights=weights_list, k=1)[0]
-    #     user_id = random.choice(self.roles[role])
-
-    #     # Weighted hour for normal
-    #     chosen_hour = self.weighted_hour_choice()
-    #     timestamp = datetime.datetime.now() - datetime.timedelta(
-    #         days=random.randint(0, self.extended_days),
-    #         hours=chosen_hour,
-    #         minutes=random.randint(0, 59),
-    #         seconds=random.randint(0, 59),
-    #     )
-
-    #     # Normal logs: IP assigned based on probability
-    #     ip_address = generate_ip_address(is_anomalous=False, network_subnet=self.network_subnet, config=self.config)
-
-    #     # Weighted HTTP method distribution for normal logs
-    #     http_method = random.choices(
-    #         self.config["NORMAL_METHODS"]["methods"],
-    #         weights=self.config["NORMAL_METHODS"]["weights"],
-    #         k=1
-    #     )[0]
-
-    #     endpoint = random.choice(self.endpoints[role])
-
-    #     # Add parameters based on endpoint with hierarchical structure
-    #     parameter = build_parameters(endpoint, self.config)
-    #     endpoint_full = endpoint + parameter
-
-    #     # Select a normal HTTP response code
-    #     http_response = self.generate_http_response_code(is_anomalous=False)
-
-    #     log_entry = {
-    #         "LogID": str(uuid.uuid4()),
-    #         "UserID": user_id,
-    #         "Role": role,
-    #         "Timestamp": timestamp.strftime("%Y-%m-%d %H:%M:%S"),
-    #         "HTTP_Method": http_method,
-    #         "Endpoint": endpoint_full,
-    #         "IP_Address": ip_address,
-    #         "HTTP_Response": http_response,
-    #         "Anomalous": 0,
-    #     }
-
-    #     # print(f"Generated normal log: {log_entry}")
-    #     return log_entry
     def generate_normal_log(self):
         # Weighted role selection
         role_choices = list(self.config["ROLE_WEIGHTS_NORMAL"].keys())

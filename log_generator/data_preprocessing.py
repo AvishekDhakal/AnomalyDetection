@@ -18,7 +18,7 @@ Usage:
 #data_preprocessing.py
 
 # ================================
-# 1. Import Necessary Libraries
+# 1. Importingo Necessary Libraries
 # ================================
 import pandas as pd
 import numpy as np
@@ -234,22 +234,6 @@ class DataPreprocessor:
             
         return df
 
-    # def _label_encode(self, col_name, series):
-    #     """Handle label encoding with unseen value management"""
-    #     if self.mode == 'train':
-    #         encoder = LabelEncoder().fit(series)
-    #         self.encoders[col_name] = encoder
-    #     else:
-    #         encoder = self.encoders.get(col_name)
-    #         if not encoder:
-    #             raise ValueError(f"No encoder found for {col_name}")
-                
-    #     transformed = encoder.transform(series)
-    #     return transformed
-
-
-
-    # In your _label_encode method of DataPreprocessor:
     def _label_encode(self, col_name, series):
         if self.mode == 'train':
             encoder = LabelEncoder().fit(series)
@@ -340,14 +324,10 @@ def safe_label_encode(encoder, series, default_value="unknown"):
         arr = series.to_numpy()
         
         # Identify unseen labels and map them to a default value
-        # Here we assume that you have added a default class to the encoder classes during training
-        # If not, you can decide on a numeric code (e.g., -1) or a special category.
         new_arr = np.array([x if x in classes else default_value for x in arr])
         
         # If the default value is not in the encoder, you must add it
         if default_value not in classes:
-            # Append the default value to the encoder classes.
-            # WARNING: This is a hack – ideally, you want to incorporate handling for unseen labels during training.
             encoder.classes_ = np.append(encoder.classes_, default_value)
         
         # Now perform the transformation

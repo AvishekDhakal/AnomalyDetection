@@ -263,7 +263,6 @@ def generate_unusual_time_access(user_id, role, network_subnet, config, extended
         seconds=random.randint(0, 59)
     )
     
-    # Adjust the hour to be within unusual hours
     timestamp = timestamp.replace(hour=hour)
     
     ip_address = generate_ip_address(is_anomalous=False, network_subnet=network_subnet, config=config)

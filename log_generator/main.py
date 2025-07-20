@@ -126,4 +126,3 @@ if __name__ == "__main__":
 
 
 # python3 main.py --total_logs 10000 --anomaly_ratio 0.0005 --overwrite
-# will give just 3
