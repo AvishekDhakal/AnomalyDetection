@@ -8,6 +8,9 @@ A lightweight pipeline for generating synthetic access logs, preprocessing & fea
 This project uses a **desk-based research** approach, synthesizing peer-reviewed studies, industry frameworks (MITRE ATT&CK, CERT Insider Threat), and case analyses under PRISMA guidelines to inform our ML design and scenarios.  
 
 ---
+## Full Report
+https://github.com/AvishekDhakal/courseworks/blob/main/220064_Avishek_Dhakal_Anamoly_Detection_1739520765066.pdf
+---
 
 ## Quick Start
 
